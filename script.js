@@ -1,4 +1,4 @@
-const data = window.portfolioData || {};
+﻿const data = window.portfolioData || {};
 const projects = data.projects || [];
 
 const phoneScreen = document.getElementById("phoneScreen");
@@ -37,19 +37,23 @@ function renderList(id, items) {
   list.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
 }
 
-function buildReferences() {
-  const references = data.references || [];
-  if (!references.length) {
-    return;
-  }
+function renderReferences() {
   const container = document.getElementById("referencesList");
-  if (!container) {
+  if (!container || !Array.isArray(data.references) || !data.references.length) {
     return;
   }
-  container.innerHTML = references.map((ref) => `<p>${ref}</p>`).join("");
+
+  const titleExists = container.querySelector("h2");
+  const referenceMarkup = data.references.map((ref) => `<p>${ref}</p>`).join("");
+
+  if (titleExists) {
+    container.innerHTML = `<h2>References</h2>${referenceMarkup}`;
+  } else {
+    container.innerHTML = referenceMarkup;
+  }
 }
 
-function applyStaticContent() {
+function applySharedContent() {
   setText("heroEyebrow", data.hero?.eyebrow);
   setText("heroName", data.hero?.name);
   setText("heroTagline", data.hero?.tagline);
@@ -66,11 +70,11 @@ function applyStaticContent() {
   setText("futureComment", data.comments?.future);
   setText("footerText", data.footer);
 
-  buildReferences();
+  renderReferences();
 }
 
 function buildProjectSlides() {
-  if (!projects.length || !phoneScreen) {
+  if (!phoneScreen || !projects.length) {
     return;
   }
 
@@ -87,7 +91,7 @@ function buildProjectSlides() {
 }
 
 function buildProjectDots() {
-  if (!projects.length || !projectDots) {
+  if (!projectDots || !projects.length) {
     return;
   }
 
@@ -111,7 +115,7 @@ function buildProjectDots() {
 }
 
 function renderProject(index) {
-  if (!projects.length) {
+  if (!projectDescription || !projects.length) {
     return;
   }
 
@@ -145,7 +149,7 @@ function changeProject(step) {
 
 function restartAutoAdvance() {
   clearInterval(autoAdvanceTimer);
-  if (projects.length < 2) {
+  if (projects.length < 2 || !projectDescription) {
     return;
   }
   autoAdvanceTimer = setInterval(() => {
@@ -155,6 +159,10 @@ function restartAutoAdvance() {
 }
 
 function setupProjectEvents() {
+  if (!projectDescription) {
+    return;
+  }
+
   prevProjectButton?.addEventListener("click", () => changeProject(-1));
   nextProjectButton?.addEventListener("click", () => changeProject(1));
 
@@ -165,9 +173,8 @@ function setupProjectEvents() {
   phoneScreen?.addEventListener("touchend", (event) => {
     const touchEndX = event.changedTouches[0].clientX;
     const deltaX = touchEndX - touchStartX;
-    const swipeThreshold = 40;
 
-    if (Math.abs(deltaX) < swipeThreshold) {
+    if (Math.abs(deltaX) < 40) {
       return;
     }
 
@@ -189,7 +196,11 @@ function setupProjectEvents() {
 }
 
 function setupNavigation() {
-  navToggle?.addEventListener("click", () => {
+  if (!navToggle || !navMenu) {
+    return;
+  }
+
+  navToggle.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
@@ -204,6 +215,10 @@ function setupNavigation() {
 
 function setupRevealAnimation() {
   const revealElements = document.querySelectorAll(".reveal");
+  if (!revealElements.length) {
+    return;
+  }
+
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -213,13 +228,13 @@ function setupRevealAnimation() {
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.15 }
   );
 
   revealElements.forEach((item) => revealObserver.observe(item));
 }
 
-applyStaticContent();
+applySharedContent();
 buildProjectSlides();
 buildProjectDots();
 renderProject(activeIndex);
