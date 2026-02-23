@@ -1,92 +1,154 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internship Report | Home</title>
-  <meta name="description" content="Internship report website with separate pages for home, organizational background, projects, and report summary.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship Creative Report</title>
+  <meta name="description" content="Interactive internship creative report template." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-noise" aria-hidden="true"></div>
+  <div class="bg-layer" aria-hidden="true"></div>
+  <div class="float-orb orb-a" aria-hidden="true"></div>
+  <div class="float-orb orb-b" aria-hidden="true"></div>
+  <div class="float-orb orb-c" aria-hidden="true"></div>
+
   <header class="site-header">
     <nav class="nav container">
-      <a href="./index.html" class="brand">N.A.S</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+      <a href="#hero" class="brand">N.A.S</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="report.html">Report</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#toc">Contents</a></li>
+        <li><a href="#org">Background</a></li>
+        <li><a href="#training">Activities</a></li>
+        <li><a href="#technical">Technical</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#bibliography">Bibliography</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero-home section">
-      <div class="container hero-grid reveal">
-        <div>
-          <p class="eyebrow" id="heroEyebrow">Internship Report 2026</p>
-          <h1 id="heroName">Nur Aina Syazalina</h1>
-          <p class="lead" id="heroTagline">A structured internship report website covering organizational background, weekly activities, technical tasks, conclusions, and references.</p>
+    <section class="section hero" id="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="chip">Internship Creative Report</p>
+          <h1>
+            Build a
+            <span class="headline-dynamic" id="headlineDynamic">bold</span>
+            experience
+          </h1>
+          <p class="lead">Drop your report identity here 🚀</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="about.html">Organizational Background</a>
-            <a class="btn btn-glass" href="report.html">View Report Summary</a>
+            <a href="#toc" class="btn btn-primary">Explore Sections</a>
+            <a href="#technical" class="btn btn-outline">Jump to Technical</a>
           </div>
         </div>
-        <div class="hero-panel">
-          <p class="chip">Table of Contents</p>
-          <h2>What This Report Covers</h2>
-          <p>Organization profile, industrial training activities, technical report, final conclusions, comments, and bibliography.</p>
-          <div class="mini-stats">
-            <article><span>4</span><p>Pages</p></article>
-            <article><span>3</span><p>Main Sections</p></article>
-            <article><span>1</span><p>Final Report</p></article>
+        <div class="hero-card reveal">
+          <h2>Quick Intro</h2>
+          <p>Drop your internship report summary here ✨</p>
+          <div class="tag-row">
+            <span>Modern</span><span>Animated</span><span>Interactive</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="toc">
       <div class="container reveal">
-        <div class="section-heading">
-          <h2>Navigate by Section</h2>
-          <p>Each part is separated into its own page for clarity.</p>
+        <div class="section-head">
+          <h2>Interactive Table of Contents</h2>
+          <p>Tap any card to jump instantly.</p>
         </div>
-        <div class="portal-grid">
-          <a class="portal-card" href="about.html">
-            <p class="portal-kicker">Page 1</p>
-            <h3>Organizational Background</h3>
-            <p>Introduction, chart, history, activities, mission, vision, and direction.</p>
-          </a>
-          <a class="portal-card" href="projects.html">
-            <p class="portal-kicker">Page 2</p>
-            <h3>Technical Projects</h3>
-            <p>Assigned tasks, handled projects, and systems/tools involved.</p>
-          </a>
-          <a class="portal-card" href="report.html">
-            <p class="portal-kicker">Page 3</p>
-            <h3>Conclusion & References</h3>
-            <p>Summary, skills gained, comments, suggestions, and bibliography.</p>
-          </a>
+        <div class="toc-grid">
+          <a class="glass-card" href="#org">Organizational Background</a>
+          <a class="glass-card" href="#training">Summary of Industrial Training Activities</a>
+          <a class="glass-card" href="#technical">Technical Report</a>
+          <a class="glass-card" href="#conclusion">Conclusion</a>
+          <a class="glass-card" href="#comments">Comments & Suggestions</a>
+          <a class="glass-card" href="#bibliography">Bibliography</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="org">
+      <div class="container reveal">
+        <article class="panel">
+          <h2>Organizational Background</h2>
+          <p>Drop your company intro here 🚀</p>
+          <p>Insert organization structure details here 🧩</p>
+          <p>Add establishment history here 🕒</p>
+          <p>Place key organizational activities here 🎯</p>
+          <p>Include mission, vision, and direction here 🌟</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="training">
+      <div class="container reveal">
+        <article class="panel">
+          <h2>Summary of Industrial Training Activities</h2>
+          <p>Insert weekly tasks here ✍️</p>
+          <p>Describe your role and responsibilities here 🧠</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="technical">
+      <div class="container reveal">
+        <article class="panel panel-highlight">
+          <h2>Technical Report</h2>
+          <p>Add detailed assigned tasks here ⚙️</p>
+          <p>Add project screenshots here 📸</p>
+          <p>List systems, tools, and processes here 🛠️</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="conclusion">
+      <div class="container reveal">
+        <article class="panel">
+          <h2>Conclusion</h2>
+          <p>Write your overall training summary here ✅</p>
+          <p>Add skills and knowledge gained here 📚</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="comments">
+      <div class="container reveal">
+        <article class="panel">
+          <h2>Comments & Suggestions</h2>
+          <p>Insert feedback on the training experience here 💬</p>
+          <p>Add constructive suggestions here 🧭</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="bibliography">
+      <div class="container reveal">
+        <article class="panel">
+          <h2>Bibliography</h2>
+          <p>Add APA or MLA references here 📖</p>
+          <p>Insert source list placeholders here 📝</p>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p id="footerText">2026 Nur Aina Syazalina - Internship Report</p>
+      <p>Internship Creative Report Template</p>
     </div>
   </footer>
 
-  <script src="data/portfolio-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
