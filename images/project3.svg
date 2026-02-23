@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1800" role="img" aria-labelledby="title desc">
+  <title id="title">Project 3 Placeholder</title>
+  <desc id="desc">Placeholder mobile interface mockup for project 3.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e6faef"/>
+      <stop offset="100%" stop-color="#ffeaf5"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1800" fill="url(#bg)"/>
+  <rect x="70" y="110" width="760" height="150" rx="26" fill="#ffffff" opacity="0.96"/>
+  <rect x="70" y="300" width="760" height="650" rx="34" fill="#ffffff" opacity="0.95"/>
+  <rect x="70" y="990" width="760" height="700" rx="34" fill="#ffffff" opacity="0.95"/>
+  <circle cx="150" cy="185" r="34" fill="#ff69b4" opacity="0.8"/>
+  <rect x="210" y="165" width="450" height="22" rx="11" fill="#1f2933" opacity="0.85"/>
+  <rect x="210" y="204" width="300" height="18" rx="9" fill="#5f6c7b" opacity="0.5"/>
+  <rect x="110" y="350" width="680" height="260" rx="24" fill="#2ecc71" opacity="0.2"/>
+  <rect x="110" y="640" width="210" height="250" rx="22" fill="#ff69b4" opacity="0.2"/>
+  <rect x="345" y="640" width="210" height="250" rx="22" fill="#2ecc71" opacity="0.2"/>
+  <rect x="580" y="640" width="210" height="250" rx="22" fill="#ff69b4" opacity="0.2"/>
+  <rect x="110" y="1060" width="350" height="210" rx="22" fill="#2ecc71" opacity="0.2"/>
+  <rect x="490" y="1060" width="300" height="40" rx="20" fill="#1f2933" opacity="0.8"/>
+  <rect x="490" y="1120" width="300" height="24" rx="12" fill="#5f6c7b" opacity="0.5"/>
+  <rect x="110" y="1300" width="680" height="130" rx="22" fill="#ff69b4" opacity="0.15"/>
+  <rect x="110" y="1460" width="680" height="180" rx="22" fill="#2ecc71" opacity="0.15"/>
+</svg>

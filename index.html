@@ -1,72 +1,173 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internship Portfolio – Nur Aina Syazalina</title>
+  <title>Internship Portfolio - Nur Aina Syazalina</title>
+  <meta name="description" content="Creative internship portfolio showcasing projects, technical achievements, and professional growth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Nur Aina Syazalina</h1>
-    <p>Internship Portfolio & Creative Projects Showcase</p>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#hero" class="brand">N.A.S</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#technical-summary">Technical Summary</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#comments">Recommendations</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About the Organization</h2>
-    <p>Interned at [Organization Name] as a [Role] from [Month-Year].</p>
-    <p>Mission: [Your mission summary]</p>
-    <p>Vision: [Organization vision]</p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects Showcase</h2>
-    <div class="project-display">
-      <div class="phone-frame">
-        <div class="slider">
-          <img src="images/project1.png" alt="Project 1 UI">
-          <img src="images/project2.png" alt="Project 2 UI">
-          <img src="images/project3.png" alt="Project 3 UI">
+  <main>
+    <section class="hero section" id="hero">
+      <div class="container hero-content reveal">
+        <p class="eyebrow" id="heroEyebrow">Internship Portfolio 2026</p>
+        <h1 id="heroName">Nur Aina Syazalina</h1>
+        <p class="tagline" id="heroTagline">Designing meaningful digital experiences through practical internship projects and technical delivery.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="#technical-summary">See Achievements</a>
         </div>
       </div>
-      <div class="project-description">
-        <h3>Project 1: [Project Name]</h3>
-        <p>Brief description of the project, your role, technologies used, and key highlights.</p>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container reveal">
+        <h2>About the Organization</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Background</h3>
+            <p id="aboutBackground">Interned at <strong>[Organization Name]</strong> as a <strong>[Role]</strong> from <strong>[Month Year]</strong> to <strong>[Month Year]</strong>.</p>
+          </article>
+          <article class="card">
+            <h3>Mission</h3>
+            <p id="aboutMission">[Insert your organization's mission and how your internship tasks supported that mission.]</p>
+          </article>
+          <article class="card">
+            <h3>Vision & Role</h3>
+            <p id="aboutVisionRole">[Insert your organization's vision and summarize your responsibilities, collaboration, and contribution.]</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container reveal">
+        <div class="section-head">
+          <h2>Projects Showcase</h2>
+          <div class="project-controls">
+            <button class="control-btn" id="prevProject" aria-label="Previous project">Previous</button>
+            <button class="control-btn" id="nextProject" aria-label="Next project">Next</button>
+          </div>
+        </div>
+        <div class="project-dots" id="projectDots" aria-label="Project selector"></div>
+
+        <div class="project-display">
+          <div class="phone-frame-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" id="phoneScreen">
+                <img src="images/project1.svg" alt="Project 1 interface preview" class="active">
+                <img src="images/project2.svg" alt="Project 2 interface preview">
+                <img src="images/project3.svg" alt="Project 3 interface preview">
+              </div>
+            </div>
+            <p class="screen-hint">Tip: Use Previous/Next to switch projects</p>
+          </div>
+
+          <article class="project-description card" id="projectDescription">
+            <p class="project-kicker">Project 1</p>
+            <h3>[Project Name 1]</h3>
+            <p>[Brief project overview. Mention user problem, your role, and impact.]</p>
+            <p><strong>Tech stack:</strong> [Example: Flutter, Firebase, REST API]</p>
+            <p><strong>Outcome:</strong> [Example: Improved task completion speed by 25%.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technical-summary">
+      <div class="container reveal">
+        <h2>Technical Summary</h2>
+        <div class="split-grid">
+          <article class="card">
+            <h3>Tasks Handled</h3>
+            <ul id="tasksList">
+              <li>Designed and implemented responsive UI components for web and mobile contexts.</li>
+              <li>Integrated APIs and validated data flows across feature modules.</li>
+              <li>Performed debugging, testing, and iteration based on mentor feedback.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Key Achievements</h3>
+            <ul id="achievementsList">
+              <li>Completed [X] assigned features within internship timeline.</li>
+              <li>Reduced UI inconsistencies through reusable component patterns.</li>
+              <li>Strengthened team documentation and handover clarity.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conclusion">
+      <div class="container reveal">
+        <h2>Conclusion</h2>
+        <article class="card">
+          <p id="conclusionText">The internship developed my technical confidence, communication with stakeholders, and practical delivery mindset. I learned to balance clean implementation, user needs, and timeline constraints while continuously improving through feedback.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="comments">
+      <div class="container reveal">
+        <h2>Comments & Recommendations</h2>
+        <div class="split-grid">
+          <article class="card">
+            <h3>Supervisor Feedback</h3>
+            <p id="supervisorComment">[Insert comment from supervisor or team lead.]</p>
+          </article>
+          <article class="card">
+            <h3>Future Improvements</h3>
+            <p id="futureComment">[Insert recommendations for next internship cycle, process, or technical enhancements.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="container reveal">
+        <h2>References</h2>
+        <article class="card" id="referencesList">
+          <p>[Author, A. A. (Year). Title. Source.]</p>
+          <p>[Organization Name. (Year). Internal documentation/report.]</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p id="footerText">&copy; 2026 Nur Aina Syazalina - Internship Portfolio</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- Technical Summary -->
-  <section id="technical-summary">
-    <h2>Technical Tasks & Achievements</h2>
-    <ul>
-      <li>Task/Project 1 – Description</li>
-      <li>Task/Project 2 – Description</li>
-    </ul>
-  </section>
-
-  <!-- Conclusion -->
-  <section id="conclusion">
-    <h2>Conclusion</h2>
-    <p>Key learnings and reflections during the internship.</p>
-  </section>
-
-  <!-- Comments & Recommendations -->
-  <section id="comments">
-    <h2>Comments & Recommendations</h2>
-    <p>Positive feedback and suggestions for future improvement.</p>
-  </section>
-
-  <!-- References -->
-  <section id="references">
-    <h2>References</h2>
-    <p>[APA / MLA formatted references]</p>
-  </section>
-
+  <script src="data/portfolio-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
