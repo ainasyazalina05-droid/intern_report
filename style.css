@@ -21,7 +21,7 @@ body {
   margin: 0;
   font-family: "Outfit", sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: #fffdf9;
   overflow-x: hidden;
 }
 
@@ -29,7 +29,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: -3;
-  background: linear-gradient(125deg, #fff8fb, #f4fff4, #fff3f8, #f8fff2);
+  background: linear-gradient(125deg, #fffafc, #f7fff6, #fff6fb, #fbfff7);
   background-size: 220% 220%;
   animation: bgShift 16s ease-in-out infinite;
 }
@@ -71,7 +71,7 @@ body {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(255, 253, 252, 0.7);
+  background: rgba(255, 253, 252, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.95);
 }
 
