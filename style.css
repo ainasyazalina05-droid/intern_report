@@ -1,31 +1,80 @@
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-    background-color: #007acc;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* Hero Section */
+header.hero {
+  background: linear-gradient(90deg, #2ecc71, #ff69b4);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+/* Section Headings */
+h2 {
+  color: #2ecc71;
+  border-bottom: 3px solid #ff69b4;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-top: 40px;
 }
 
+/* Project Display */
+.project-display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 20px;
+}
+
+/* Phone Frame */
+.phone-frame {
+  width: 300px;
+  height: 600px;
+  border: 12px solid #333;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.phone-frame .slider {
+  display: flex;
+  flex-direction: column;
+  animation: slide 12s infinite;
+}
+
+.phone-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* Slider Animation */
+@keyframes slide {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-100%); }
+  50%, 70% { transform: translateY(-200%); }
+  75%, 100% { transform: translateY(0); }
+}
+
+/* Project Description */
+.project-description {
+  max-width: 500px;
+}
+
+/* Sections */
 section {
-    padding: 40px 20px;
-    text-align: center;
+  padding: 40px 20px;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
+/* Lists */
+ul {
+  list-style-type: disc;
+  padding-left: 40px;
 }
