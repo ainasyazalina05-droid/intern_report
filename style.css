@@ -127,10 +127,6 @@ a {
 .nav-menu a.active {
   background: rgba(255, 105, 180, 0.17);
   color: #96245f;
-}
-
-.nav-menu a:hover,
-.nav-menu a:focus-visible {
   transform: translateY(-1px);
 }
 
