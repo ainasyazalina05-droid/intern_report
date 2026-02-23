@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internship Creative Report | Contents</title>
+  <title>Internship Creative Report | Projects</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -20,10 +20,10 @@
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="contents.html">Contents</a></li>
+        <li><a href="contents.html">Contents</a></li>
         <li><a href="organizational-background.html">Background</a></li>
         <li><a href="training-activities.html">Activities</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
         <li><a href="technical-report.html">Technical</a></li>
       </ul>
     </nav>
@@ -33,17 +33,22 @@
     <section class="section">
       <div class="container reveal">
         <div class="section-head">
-          <h1>Table of Contents</h1>
-          <p>Use cards to open each section page.</p>
+          <h1>Projects</h1>
+          <div class="project-controls">
+            <button class="control-btn" id="prevProject" aria-label="Previous project">Previous</button>
+            <button class="control-btn" id="nextProject" aria-label="Next project">Next</button>
+          </div>
         </div>
-        <div class="toc-grid">
-          <a class="glass-card" href="organizational-background.html">Organizational Background</a>
-          <a class="glass-card" href="training-activities.html">Summary of Industrial Training Activities</a>
-          <a class="glass-card" href="projects.html">Projects</a>
-          <a class="glass-card" href="technical-report.html">Technical Report</a>
-          <a class="glass-card" href="conclusion.html">Conclusion</a>
-          <a class="glass-card" href="comments-suggestions.html">Comments & Suggestions</a>
-          <a class="glass-card" href="bibliography.html">Bibliography</a>
+        <div class="project-dots" id="projectDots" aria-label="Project selector"></div>
+        <div class="project-layout">
+          <div class="phone-frame-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" id="phoneScreen"></div>
+            </div>
+            <p class="hint-text">Swipe on mobile or use buttons.</p>
+          </div>
+          <article class="panel" id="projectDescription"></article>
         </div>
       </div>
     </section>
