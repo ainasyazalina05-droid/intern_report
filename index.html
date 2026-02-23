@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internship Creative Report | Home</title>
+  <title>Internship Creative Report</title>
   <meta name="description" content="Soft pastel strawberry matcha internship creative report." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,29 +17,32 @@
 
   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="brand">N.A.S</a>
+      <a href="#home" class="brand">N.A.S</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
       <ul class="nav-menu" id="navMenu">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="contents.html">Contents</a></li>
-        <li><a href="organizational-background.html">Background</a></li>
-        <li><a href="training-activities.html">Activities</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="technical-report.html">Technical</a></li>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#contents">Contents</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#technical">Technical</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#bibliography">Bibliography</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="section hero">
+    <section class="section hero" id="home">
       <div class="container hero-grid">
         <div class="reveal">
           <p class="chip">Strawberry Matcha Pastel</p>
           <h1>Internship Creative Report Website</h1>
           <p class="lead">Drop your report identity here.</p>
           <div class="hero-actions">
-            <a href="contents.html" class="btn btn-primary">Open Contents</a>
-            <a href="projects.html" class="btn btn-outline">Open Projects</a>
+            <a href="#contents" class="btn btn-primary">Open Contents</a>
+            <a href="#projects" class="btn btn-outline">Open Projects</a>
           </div>
         </div>
         <div class="hero-card reveal">
@@ -47,6 +50,112 @@
           <p>Add your home intro placeholder here.</p>
           <div class="tag-row"><span>Pastel</span><span>Creative</span><span>Interactive</span></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="contents">
+      <div class="container reveal">
+        <div class="section-head">
+          <h1>Table of Contents</h1>
+          <p>Use cards to jump to each section.</p>
+        </div>
+        <div class="toc-grid">
+          <a class="glass-card" href="#background">Organizational Background</a>
+          <a class="glass-card" href="#activities">Summary of Industrial Training Activities</a>
+          <a class="glass-card" href="#projects">Projects</a>
+          <a class="glass-card" href="#technical">Technical Report</a>
+          <a class="glass-card" href="#conclusion">Conclusion</a>
+          <a class="glass-card" href="#comments">Comments & Suggestions</a>
+          <a class="glass-card" href="#bibliography">Bibliography</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="background">
+      <div class="container reveal">
+        <article class="panel">
+          <h1>Organizational Background</h1>
+          <p>Drop your company intro here.</p>
+          <p>Insert organizational chart placeholder here.</p>
+          <p>Add establishment history placeholder here.</p>
+          <p>Place organization activities placeholder here.</p>
+          <p>Insert mission, vision, and direction placeholder here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="container reveal">
+        <article class="panel">
+          <h1>Summary of Industrial Training Activities</h1>
+          <p>Insert weekly task-based activity placeholder here.</p>
+          <p>Insert roles and responsibilities placeholder here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container reveal">
+        <div class="section-head">
+          <h1>Projects</h1>
+          <div class="project-controls">
+            <button class="control-btn" id="prevProject" aria-label="Previous project">Previous</button>
+            <button class="control-btn" id="nextProject" aria-label="Next project">Next</button>
+          </div>
+        </div>
+        <div class="project-dots" id="projectDots" aria-label="Project selector"></div>
+        <div class="project-layout">
+          <div class="phone-frame-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" id="phoneScreen"></div>
+            </div>
+            <p class="hint-text">Swipe on mobile or use buttons.</p>
+          </div>
+          <article class="panel" id="projectDescription"></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technical">
+      <div class="container reveal">
+        <article class="panel panel-highlight">
+          <h1>Technical Report</h1>
+          <p>Add detailed assigned tasks placeholder here.</p>
+          <p>Add projects handled placeholder here.</p>
+          <p>Add systems, tools, and processes placeholder here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="conclusion">
+      <div class="container reveal">
+        <article class="panel">
+          <h1>Conclusion</h1>
+          <p>Write overall training experience summary placeholder here.</p>
+          <p>Add skills and knowledge gained placeholder here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="comments">
+      <div class="container reveal">
+        <article class="panel">
+          <h1>Comments and Suggestions</h1>
+          <p>Insert feedback placeholder on training experience here.</p>
+          <p>Add constructive recommendation placeholder here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="bibliography">
+      <div class="container reveal">
+        <article class="panel">
+          <h1>Bibliography</h1>
+          <p>Add APA placeholder citation here.</p>
+          <p>Add MLA placeholder citation here.</p>
+          <p>Insert additional reference placeholder list here.</p>
+        </article>
       </div>
     </section>
   </main>
