@@ -1,14 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Internship Creative Report | Projects</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="bg-layer" aria-hidden="true"></div>
   <div class="float-orb orb-a" aria-hidden="true"></div>
@@ -16,16 +19,22 @@
 
   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="brand">N.A.S</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contents.html">Contents</a></li>
-        <li><a href="organizational-background.html">Background</a></li>
-        <li><a href="training-activities.html">Activities</a></li>
-        <li><a class="active" href="projects.html">Projects</a></li>
-        <li><a href="technical-report.html">Technical</a></li>
-      </ul>
+      <a href="index.html" class="brand"><img src="images/logo.png" alt="Site logo" class="brand-logo" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div style="display: flex; align-items: center;">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="technical-report.html">Technical</a></li>
+          <li><a class="active" href="projects.html">Projects</a></li>
+          <li><a href="activity-summary.html">Activity</a></li>
+        </ul>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -54,7 +63,12 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><p>Internship Creative Report Template</p></div></footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Internship Creative Report Template</p>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
+
 </html>
