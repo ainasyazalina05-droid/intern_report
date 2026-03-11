@@ -1325,26 +1325,31 @@ p:last-child {
 }
 
 .phone-frame {
-  width: min(78vw, 270px);
+  width: clamp(180px, 42vw, 220px);
   aspect-ratio: 9 / 18;
-  border-radius: 32px;
-  border: 8px solid var(--primary);
+  border-radius: 26px;
+  border: 5px solid var(--primary);
   background: var(--surface);
-  padding: 0.44rem;
+  padding: 0.3rem;
   position: relative;
   box-shadow: var(--shadow-lg);
 }
 
 .phone-notch {
   position: absolute;
-  width: 36%;
-  height: 18px;
-  border-radius: 0 0 12px 12px;
+  width: 32%;
+  height: 14px;
+  border-radius: 0 0 9px 9px;
   top: -1px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--primary);
   z-index: 2;
+}
+
+.project-description {
+  padding: 1.1rem;
+  font-size: 0.95rem;
 }
 
 .phone-screen {
