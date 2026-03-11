@@ -4,13 +4,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internship Report | Activity Summary</title>
-  <meta name="description" content="Weekly activity logbook for Nur Aina Syazalina's 20-week internship training." />
+  <title>Internship Journey | 20 Weeks of Growth</title>
+  <meta name="description" content="Interactive timeline of 20-week internship journey for Nur Aina Syazalina." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Additional styles for activity summary */
+    .hero-mini {
+      background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 100%);
+      padding: 3rem 0;
+      margin-bottom: 1rem;
+      border-radius: 0 0 2rem 2rem;
+    }
+
+    .stats-highlight {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .stat-bubble {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-bubble:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-bubble .number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-bubble .label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: calc(100% - 4rem);
+      top: 2rem;
+      background: linear-gradient(to bottom, 
+        var(--accent-soft), 
+        var(--accent), 
+        var(--accent-soft));
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      width: 45%;
+      padding: 1.5rem;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .timeline-content:hover {
+      transform: scale(1.02) translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 30px -10px rgba(59, 130, 246, 0.2);
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -45px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -45px;
+    }
+
+    .timeline-week {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 2rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .timeline-tasks {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .timeline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent-soft);
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 1rem;
+    }
+
+    .phase-divider {
+      text-align: center;
+      margin: 3rem 0 2rem;
+      position: relative;
+    }
+
+    .phase-divider span {
+      background: var(--surface);
+      padding: 0.5rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+    }
+
+    .week-grid {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 40px;
+      }
+
+      .timeline-content {
+        width: 100%;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::before,
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -35px;
+        right: auto;
+      }
+
+      .stats-highlight {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -20,36 +224,32 @@
 
   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="brand"><img src="images/logo.png" alt="Site logo" class="brand-logo" /></a>
+      <a href="index.html" class="brand">✨ Internship Report</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li class="nav-item-dropdown">
-          <a class="dropdown-trigger" href="introduction.html">Introduction ▾</a>
+          <a class="dropdown-trigger" href="introduction.html">Introduction &#9662;</a>
           <ul class="dropdown-menu">
             <li><a href="introduction.html#section-1-1">1.1 Industrial Training</a></li>
             <li><a href="introduction.html#section-1-2">1.2 Background</a></li>
             <li><a href="introduction.html#section-1-3">1.3 Objectives</a></li>
             <li><a href="introduction.html#section-1-4">1.4 Vision & Mission</a></li>
-            <li><a href="introduction.html#section-1-5">1.5 Core Strengths</a></li>
-            <li><a href="introduction.html#section-1-6">1.6 Org Chart</a></li>
-            <li><a href="introduction.html#section-1-7">1.7 Dept Functions</a></li>
-            <li><a href="introduction.html#section-1-8">1.8 Future Plans</a></li>
           </ul>
         </li>
         <li><a href="acknowledgements.html">Acknowledgements</a></li>
         <li><a class="active" href="activity-summary.html">Activity Summary</a></li>
         <li class="nav-item-dropdown">
-          <a class="dropdown-trigger" href="technical-report.html">Technical Report ▾</a>
+          <a class="dropdown-trigger" href="technical-report.html">Technical Report &#9662;</a>
           <ul class="dropdown-menu">
             <li><a href="technical-report.html#section-tasks">Tasks Performed</a></li>
             <li><a href="technical-report.html#section-projects">Featured Projects</a></li>
           </ul>
         </li>
         <li class="nav-item-dropdown">
-          <a class="dropdown-trigger" href="conclusion.html">Conclusion ▾</a>
+          <a class="dropdown-trigger" href="conclusion.html">Conclusion &#9662;</a>
           <ul class="dropdown-menu">
             <li><a href="conclusion.html#section-suggestions">Suggestions</a></li>
             <li><a href="conclusion.html#section-reflection">Overall Conclusion</a></li>
@@ -60,170 +260,258 @@
   </header>
 
   <main>
+    <!-- Mini Hero Section -->
+    <div class="hero-mini">
+      <div class="container">
+        <div class="reveal">
+          <p class="chip">📆 20 Weeks Journey</p>
+          <h1>My Internship Adventure</h1>
+          <p class="lead">From orientation to handover — a timeline of growth, challenges, and achievements</p>
+        </div>
+      </div>
+    </div>
+
     <section class="section">
-      <div class="container reveal">
-        <div class="section-head">
-          <div>
-            <p class="chip">Section 3 of 5</p>
-            <h1>Activity Summary</h1>
+      <div class="container">
+        <!-- Quick Stats -->
+        <div class="stats-highlight reveal">
+          <div class="stat-bubble">
+            <div class="number">20</div>
+            <div class="label">Weeks of Learning</div>
           </div>
-          <p class="lead">Weekly Logbook &mdash; 20 Weeks of Training</p>
+          <div class="stat-bubble">
+            <div class="number">4</div>
+            <div class="label">Project Phases</div>
+          </div>
+          <div class="stat-bubble">
+            <div class="number">∞</div>
+            <div class="label">New Skills</div>
+          </div>
         </div>
 
-        <div class="logbook-grid stagger-reveal">
+        <!-- Interactive Timeline -->
+        <div class="timeline stagger-reveal" id="timeline">
+          
+          <!-- Phase 1: Foundation -->
+          <div class="phase-divider reveal">
+            <span>⚡ Phase 1: Foundation (Weeks 1-5)</span>
+          </div>
 
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 1</span>
-            <h2>Orientation &amp; Onboarding</h2>
-            <p>Attended company orientation, reviewed internal policies, set up development environment, and received an
-              introduction to the team and ongoing projects.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 2</span>
-            <h2>Codebase Walkthrough</h2>
-            <p>Explored the existing project repository, studied the Flutter module structure, and gained an
-              understanding of current UI flows, naming conventions, and component patterns.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 3</span>
-            <h2>First Assigned Tasks</h2>
-            <p>Started on assigned UI tasks for the home screen module. Aligned implementation work with design
-              references and received initial feedback from the supervisor.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 4</span>
-            <h2>Feature Refinements</h2>
-            <p>Refined home screen components, improved responsiveness across different device sizes, and applied layout
-              adjustments based on team review comments.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 5</span>
-            <h2>API Integration</h2>
-            <p>Integrated data-driven components with REST API responses. Validated data rendering logic and handled
-              edge cases for empty and error states.</p>
-            <div class="img-placeholder" style="min-height: 120px; margin-top: 1rem; padding: 1rem;">
-              <span class="icon" style="font-size: 1.5rem;">🔗</span>
-              <small>Screenshot of API integration / Debugging</small>
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 1</span>
+              <h3 class="timeline-title">🌱 Orientation & Setup</h3>
+              <p class="timeline-tasks">Company orientation, HR briefing, dev environment setup, team introductions</p>
+              <span class="timeline-badge">🏁 First steps</span>
             </div>
-          </article>
+          </div>
 
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 6</span>
-            <h2>Bug Fixing</h2>
-            <p>Identified and resolved visual and interaction bugs across active modules. Worked closely with senior
-              developers to reproduce and trace root causes efficiently.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 7</span>
-            <h2>UI Consistency Updates</h2>
-            <p>Updated layout inconsistencies and typography across multiple screens based on team review feedback,
-              strengthening alignment with design system guidelines.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 8</span>
-            <h2>User Flow Improvements</h2>
-            <p>Improved user flow clarity and interaction behavior for the menu and membership screens, including
-              navigation transitions and modal handling.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 9</span>
-            <h2>Regression Testing</h2>
-            <p>Continued module integration and performed regression checks for previously fixed defects to ensure no
-              new issues were introduced by recent changes.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 10</span>
-            <h2>Testing Support</h2>
-            <p>Supported the QA cycle by documenting test results, logging observed issues, and following up with code
-              corrections based on test findings.</p>
-            <div class="img-placeholder" style="min-height: 120px; margin-top: 1rem; padding: 1rem;">
-              <span class="icon" style="font-size: 1.5rem;">🧪</span>
-              <small>Testing logs or bug reports</small>
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 2</span>
+              <h3 class="timeline-title">🔍 Codebase Exploration</h3>
+              <p class="timeline-tasks">Repository walkthrough, Flutter architecture, UI component library review</p>
+              <span class="timeline-badge">📚 Learning</span>
             </div>
-          </article>
+          </div>
 
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 11</span>
-            <h2>Mentor Review Cycle</h2>
-            <p>Applied recommendations from the internship supervisor to improve UI structure, component reusability,
-              and overall code maintainability across assigned modules.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 12</span>
-            <h2>Additional Feature Tasks</h2>
-            <p>Worked on additional feature tasks assigned mid-internship. Verified implemented behavior against defined
-              requirements and coordinated with the product team.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 13</span>
-            <h2>Styling Consistency</h2>
-            <p>Refined styling consistency across multiple screens and updated reusable component patterns to reduce
-              duplication and improve scalability of the UI codebase.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 14</span>
-            <h2>Collaborative Issue Resolution</h2>
-            <p>Collaborated with the team on identifying and resolving outstanding UI and logic issues. Validated all
-              fixes before handover to the testing pipeline.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 15</span>
-            <h2>Progress Updates</h2>
-            <p>Prepared weekly progress updates and technical notes for supervision meetings. Summarized key
-              accomplishments, blockers, and next steps for each module.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 16</span>
-            <h2>Stability &amp; Edge Cases</h2>
-            <p>Focused on stability improvements for active modules by identifying edge cases in user input handling,
-              state management, and data rendering scenarios.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 17</span>
-            <h2>Task Completion</h2>
-            <p>Completed all remaining assigned development tasks. Performed final quality checks to ensure deliverables
-              met requirements before submission to the supervisor.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 18</span>
-            <h2>Final Content &amp; Cleanup</h2>
-            <p>Assisted with final content updates and code cleanup to ensure the project was ready for deployment.
-              Resolved any outstanding minor issues identified during review.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 19</span>
-            <h2>Documentation</h2>
-            <p>Compiled internship documentation including technical notes, code comments, and a summary of all learning
-              outcomes and key contributions during the training period.</p>
-          </article>
-
-          <article class="panel log-item">
-            <span class="log-week-badge">Week 20</span>
-            <h2>Final Reporting &amp; Wrap-Up</h2>
-            <p>Completed the final internship report, prepared the presentation, conducted the exit meeting with the
-              supervisor, and formally concluded the industrial training program.</p>
-            <div class="img-placeholder" style="min-height: 120px; margin-top: 1rem; padding: 1rem;">
-              <span class="icon" style="font-size: 1.5rem;">🎉</span>
-              <small>Final presentation / Group photo</small>
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 3</span>
+              <h3 class="timeline-title">🎨 First UI Tasks</h3>
+              <p class="timeline-tasks">Implemented initial UI changes, design alignment, first PR submitted</p>
+              <span class="timeline-badge">🚀 First contribution</span>
             </div>
-          </article>
+          </div>
 
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 4</span>
+              <h3 class="timeline-title">✨ Refinement Phase</h3>
+              <p class="timeline-tasks">Responsive fixes, spacing adjustments, design system alignment</p>
+              <span class="timeline-badge">🎯 Attention to detail</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 5</span>
+              <h3 class="timeline-title">🔌 API Integration</h3>
+              <p class="timeline-tasks">Connected UI to REST endpoints, error handling, loading states</p>
+              <span class="timeline-badge">⚙️ Technical deep dive</span>
+            </div>
+          </div>
+
+          <!-- Phase 2: Growth -->
+          <div class="phase-divider reveal">
+            <span>📈 Phase 2: Growth (Weeks 6-10)</span>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 6</span>
+              <h3 class="timeline-title">🐛 Bug Squashing</h3>
+              <p class="timeline-tasks">UI defect resolution, debugging techniques, issue reproduction</p>
+              <span class="timeline-badge">🔨 Problem solver</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 7</span>
+              <h3 class="timeline-title">🎯 Design System Alignment</h3>
+              <p class="timeline-tasks">Typography standardization, color consistency, component unification</p>
+              <span class="timeline-badge">🎨 Design eye</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 8</span>
+              <h3 class="timeline-title">🔄 User Flow Optimization</h3>
+              <p class="timeline-tasks">Navigation improvements, interaction enhancements, UX refinements</p>
+              <span class="timeline-badge">💫 UX focus</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 9</span>
+              <h3 class="timeline-title">✅ Quality Assurance</h3>
+              <p class="timeline-tasks">Regression testing, bug verification, stability checks</p>
+              <span class="timeline-badge">🔬 Detail oriented</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 10</span>
+              <h3 class="timeline-title">📝 Testing & Documentation</h3>
+              <p class="timeline-tasks">Test case documentation, issue logging, QA collaboration</p>
+              <span class="timeline-badge">📋 Process driven</span>
+            </div>
+          </div>
+
+          <!-- Phase 3: Mastery -->
+          <div class="phase-divider reveal">
+            <span>🚀 Phase 3: Mastery (Weeks 11-15)</span>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 11</span>
+              <h3 class="timeline-title">🔄 Component Refactoring</h3>
+              <p class="timeline-tasks">Reusable widgets, code optimization, maintainability improvements</p>
+              <span class="timeline-badge">🏗️ Architecture</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 12</span>
+              <h3 class="timeline-title">⚡ State Management</h3>
+              <p class="timeline-tasks">Async handling, state updates, performance optimization</p>
+              <span class="timeline-badge">🧠 Advanced concepts</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 13</span>
+              <h3 class="timeline-title">✨ Feature Enhancement</h3>
+              <p class="timeline-tasks">New UI features, micro-interactions, animation refinements</p>
+              <span class="timeline-badge">🎯 Impact driven</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 14</span>
+              <h3 class="timeline-title">🤝 Cross-team Sync</h3>
+              <p class="timeline-tasks">Design reviews, developer collaboration, feedback sessions</p>
+              <span class="timeline-badge">🗣️ Communication</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 15</span>
+              <h3 class="timeline-title">⚡ Performance Tuning</h3>
+              <p class="timeline-tasks">Render optimization, data-heavy screens, responsiveness</p>
+              <span class="timeline-badge">📊 Analytics</span>
+            </div>
+          </div>
+
+          <!-- Phase 4: Delivery -->
+          <div class="phase-divider reveal">
+            <span>🎯 Phase 4: Delivery (Weeks 16-20)</span>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 16</span>
+              <h3 class="timeline-title">📦 Release Prep</h3>
+              <p class="timeline-tasks">Critical flow verification, issue triage, pre-release checks</p>
+              <span class="timeline-badge">🚀 Launch ready</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 17</span>
+              <h3 class="timeline-title">📚 Documentation</h3>
+              <p class="timeline-tasks">Technical notes, handover docs, process documentation</p>
+              <span class="timeline-badge">📖 Knowledge sharing</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 18</span>
+              <h3 class="timeline-title">✨ Final Polish</h3>
+              <p class="timeline-tasks">Visual refinements, consistency checks, pixel perfect fixes</p>
+              <span class="timeline-badge">🎨 Perfectionist</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 19</span>
+              <h3 class="timeline-title">✅ Final Testing</h3>
+              <p class="timeline-tasks">End-to-end testing, regression verification, sign-offs</p>
+              <span class="timeline-badge">🔍 Quality check</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="timeline-week">Week 20</span>
+              <h3 class="timeline-title">🎓 Reflection & Handover</h3>
+              <p class="timeline-tasks">Final presentation, knowledge transfer, internship completion</p>
+              <span class="timeline-badge">🌟 Milestone</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="glass-card" style="margin: 4rem 0 2rem; padding: 2rem;">
+          <h2 style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 2rem;">💡</span> Key Takeaways
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+            <div>
+              <h3 style="color: var(--accent);">Technical Growth</h3>
+              <p>Flutter mastery, API integration, state management, performance optimization</p>
+            </div>
+            <div>
+              <h3 style="color: var(--accent);">Soft Skills</h3>
+              <p>Team collaboration, communication, problem-solving, time management</p>
+            </div>
+            <div>
+              <h3 style="color: var(--accent);">Professional</h3>
+              <p>Code reviews, documentation, agile methodology, project delivery</p>
+            </div>
+          </div>
         </div>
 
         <!-- Section Navigation -->
@@ -243,10 +531,36 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>2026 Nur Aina Syazalina — Internship Portfolio</p>
+      <p style="display: flex; justify-content: space-between; align-items: center;">
+        <span>&copy; 2026 Nur Aina Syazalina</span>
+        <span style="color: var(--accent);">✨ 20 weeks of growth</span>
+      </p>
     </div>
   </footer>
+  
   <script src="script.js"></script>
+  <script>
+    // Smooth reveal animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      function checkReveal() {
+        for (let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const revealTop = reveals[i].getBoundingClientRect().top;
+          const revealPoint = 150;
+          
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('in-view');
+          }
+        }
+      }
+      
+      window.addEventListener('scroll', checkReveal);
+      checkReveal();
+    });
+  </script>
 </body>
 
 </html>
+

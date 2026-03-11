@@ -60,6 +60,63 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal, .stagger-reveal").forEach((el) => revealObserver.observe(el));
 
+/* ─── In-page smooth scroll + TOC active state ───────────── */
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const targetId = link.getAttribute("href");
+    if (!targetId || targetId === "#") return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.pushState(null, "", targetId);
+  });
+});
+
+const tocLinks = [
+  ...document.querySelectorAll(".toc-grid a[href^=\"#\"], .toc-list a[href^=\"#\"]")
+];
+
+if (tocLinks.length) {
+  const sectionMap = tocLinks
+    .map((link) => {
+      const id = link.getAttribute("href");
+      const section = id ? document.querySelector(id) : null;
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  const setActive = (activeLink) => {
+    tocLinks.forEach((l) => l.classList.remove("active"));
+    if (activeLink) activeLink.classList.add("active");
+  };
+
+  const tocObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const match = sectionMap.find((item) => item.section === entry.target);
+          if (match) setActive(match.link);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -60% 0px", threshold: 0.2 }
+  );
+
+  sectionMap.forEach((item) => tocObserver.observe(item.section));
+}
+
+document.querySelectorAll(".toc-grid a, .toc-list a").forEach((link) => {
+  try {
+    const url = new URL(link.href, window.location.href);
+    if (url.pathname === window.location.pathname && (!url.hash || url.hash === window.location.hash)) {
+      link.classList.add("active");
+    }
+  } catch {
+    // Ignore malformed URLs
+  }
+});
+
 /* ─── Smooth <details> animation ────────────────────────── */
 function animateDetails(details, open) {
   const body = details.querySelector(".dropdown-body");
@@ -137,8 +194,12 @@ const projects = [
     kicker: "Project 1",
     title: "Cloverly Home Experience",
     summary: "Built and refined core home screen components to improve clarity, consistency, and first-use experience for users.",
-    stack: "Flutter · Dart · REST API",
-    outcome: "Improved visual consistency and reduced repeated layout issues across updates.",
+    tech: ["Flutter", "Dart", "REST API"],
+    features: [
+      "Personalized home layout modules",
+      "Reusable widget structure",
+      "Responsive spacing refinements"
+    ],
     image: "images/project1.svg",
     alt: "Cloverly home screen preview"
   },
@@ -146,8 +207,12 @@ const projects = [
     kicker: "Project 2",
     title: "Floristo Content Module",
     summary: "Implemented and polished content-driven screens with stronger structure and readable presentation for dynamic data.",
-    stack: "Flutter · Dart · Component-based UI",
-    outcome: "Increased maintainability through reusable sections and cleaner content rendering.",
+    tech: ["Flutter", "Dart", "Component-based UI"],
+    features: [
+      "Dynamic content rendering",
+      "Readable card hierarchy",
+      "Reusable content sections"
+    ],
     image: "images/project2.svg",
     alt: "Floristo content module preview"
   },
@@ -155,8 +220,12 @@ const projects = [
     kicker: "Project 3",
     title: "Membership & Menu Flow",
     summary: "Handled UI and behavior updates for membership and menu-related flows, including bug fixes and interaction improvements.",
-    stack: "Flutter · Dart · Git · Debugging workflow",
-    outcome: "Delivered more stable user flows with clearer interaction feedback and fewer UI regressions.",
+    tech: ["Flutter", "Dart", "Git", "Debugging"],
+    features: [
+      "Stabilized navigation flow",
+      "Refined modal interactions",
+      "Regression fixes and QA support"
+    ],
     image: "images/project3.svg",
     alt: "Membership and menu flow preview"
   }
@@ -181,12 +250,22 @@ function renderProject(index) {
   phoneImages.forEach((img, i) => img.classList.toggle("active", i === index));
   dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
 
+  projectDescription.classList.remove("project-fade");
+  phoneScreen?.classList.remove("project-fade");
+  void projectDescription.offsetWidth;
+  projectDescription.classList.add("project-fade");
+  phoneScreen?.classList.add("project-fade");
+
   projectDescription.innerHTML = `
     <p class="project-kicker">${p.kicker}</p>
     <h2>${p.title}</h2>
     <p>${p.summary}</p>
-    <p><strong>Tools:</strong> ${p.stack}</p>
-    <p><strong>Result:</strong> ${p.outcome}</p>
+    <div class="project-meta">
+      <span><strong>Technologies:</strong> ${p.tech.join(" · ")}</span>
+    </div>
+    <ul class="project-features">
+      ${p.features.map((item) => `<li>${item}</li>`).join("")}
+    </ul>
   `;
 }
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nur Aina Syazalina | Internship Report</title>
   <meta name="description"
-    content="Landing page for Nur Aina Syazalina's internship report � navigate to any section from here." />
+    content="Landing page for Nur Aina Syazalina's internship report � navigate to any section from here." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -19,23 +19,23 @@
   <div class="float-orb orb-a" aria-hidden="true"></div>
   <div class="float-orb orb-b" aria-hidden="true"></div>
 
-<!-- University Banner -->
-<div class="uni-banner">
-  <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="images/psis.png" alt="University Logo" class="uni-logo">
+  <!-- University Banner -->
+  <div class="uni-banner">
+    <div class="container">
+      <img src="images/psis.png" alt="University Logo" class="uni-logo">
+    </div>
   </div>
-</div>
 
   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="brand"><img src="images/logo.png" alt="Site logo" class="brand-logo" /></a>
+      <a href="index.html" class="brand">Internship Report</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a class="active" href="index.html">Home</a></li>
         <li class="nav-item-dropdown">
-          <a class="dropdown-trigger" href="introduction.html">Introduction ▾</a>
+          <a class="dropdown-trigger" href="introduction.html">Introduction &#9662;</a>
           <ul class="dropdown-menu">
             <li><a href="introduction.html#section-1-1">1.1 Industrial Training</a></li>
             <li><a href="introduction.html#section-1-2">1.2 Background</a></li>
@@ -50,14 +50,17 @@
         <li><a href="acknowledgements.html">Acknowledgements</a></li>
         <li><a href="activity-summary.html">Activity Summary</a></li>
         <li class="nav-item-dropdown">
-          <a class="dropdown-trigger" href="technical-report.html">Technical Report ▾</a>
-          <ul class="dropdown-menu">
+          <a class="dropdown-trigger" href="technical-report.html">Technical Report &#9662;</a>
+                    <ul class="dropdown-menu">
             <li><a href="technical-report.html#section-tasks">Tasks Performed</a></li>
             <li><a href="technical-report.html#section-projects">Featured Projects</a></li>
+            <li><a href="technical-report.html#section-technical-work">Technical Work</a></li>
+            <li><a href="technical-report.html#section-learning-outcomes">Learning Outcomes</a></li>
+            <li><a href="technical-report.html#section-challenges">Challenges</a></li>
           </ul>
         </li>
         <li class="nav-item-dropdown">
-          <a class="dropdown-trigger" href="conclusion.html">Conclusion ▾</a>
+          <a class="dropdown-trigger" href="conclusion.html">Conclusion &#9662;</a>
           <ul class="dropdown-menu">
             <li><a href="conclusion.html#section-suggestions">Suggestions</a></li>
             <li><a href="conclusion.html#section-reflection">Overall Conclusion</a></li>
@@ -67,48 +70,55 @@
     </nav>
   </header>
 
-  <main>
-    <!-- Hero -->
+  <main><!-- Hero -->
     <section class="section hero" id="home">
       <div class="container hero-grid">
-        <div class="stagger-reveal">
-          <p class="chip">Industrial Training Report � 2026</p>
-          <h1>Internship Report</h1>
-          <p class="lead">A structured, multi-section digital report covering the full 20-week industrial training
-            experience � built for clear navigation, better reading, and easy maintenance.</p>
+        <div class="hero-content stagger-reveal">
+          <p class="chip">Industrial Training Report &bull; 2026</p>
+          <h1>Industrial Training Report</h1>
+          <p class="hero-subtitle">Mobile Application Development Internship</p>
+          <p class="lead">A structured, multi-section digital report documenting a 20-week internship experience with
+            a focus on mobile application development, teamwork, and professional growth.</p>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span class="meta-label">Student</span>
+              <span class="meta-value">Nur Aina Syazalina</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Program</span>
+              <span class="meta-value">Diploma in Information Technology</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Institution</span>
+              <span class="meta-value">Politeknik Sultan Salahuddin Abdul Aziz Shah</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2026</span>
+            </div>
+          </div>
           <div class="hero-actions">
             <a href="introduction.html" class="btn btn-primary">Start Reading</a>
             <a href="technical-report.html" class="btn btn-outline">Technical Report</a>
           </div>
-
-          <div class="img-placeholder" style="min-height: 180px; margin-top: 2rem;">
-            <span class="icon">🖼️</span>
-            <strong>Hero Banner Montage</strong>
-            <small>Showcase your best project work or office life here.</small>
-          </div>
         </div>
         <div class="hero-card reveal">
-          <div class="img-placeholder"
-            style="min-height: 150px; margin-bottom: 1.2rem; border-radius: 50%; width: 120px; height: 120px; margin-inline: auto;">
-            <span class="icon">👤</span>
-          </div>
-          <p class="chip" style="display: block; width: fit-content; margin-inline: auto;">Prepared by</p>
-          <h2 style="text-align: center;">Nur Aina Syazalina</h2>
-          <p style="color:var(--muted); font-size: 0.93rem; margin-bottom: 0.9rem; text-align: center;">Use the section
-            cards below or the
-            navigation above to jump to any part of the report.</p>
-          <div class="tag-row" style="justify-content: center;">
-            <span>Industrial Training</span>
-            <span>Mobile Dev</span>
-            <span>Flutter � Dart</span>
-            <span>2026</span>
-          </div>
+          <p class="chip">Report Snapshot</p>
+          <h2>Professional Summary</h2>
+          <ul class="hero-list">
+            <li><span class="list-dot"></span><span>20-week industrial training focused on mobile application
+                development.</span></li>
+            <li><span class="list-dot"></span><span>Hands-on experience with real-world product features, QA, and
+                iterative delivery.</span></li>
+            <li><span class="list-dot"></span><span>Emphasis on clean UI implementation, API integration, and teamwork
+                workflows.</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- Executive Summary -->
-    <section class="section" id="exec-summary" style="background: rgba(255, 255, 255, 0.3);">
+    <section class="section" id="exec-summary">
       <div class="container reveal">
         <div class="section-head">
           <h1>Executive Summary</h1>
@@ -124,6 +134,53 @@
         </div>
       </div>
     </section>
+    <!-- Internship Outcome Stats -->
+    <section class="section" id="internship-stats">
+      <div class="container reveal">
+        <div class="section-head">
+          <h1>Internship Outcome Stats</h1>
+          <p class="lead">A concise overview of the training impact and deliverables.</p>
+        </div>
+        <div class="stats-grid stagger-reveal">
+          <article class="glass-card stat-card">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Weeks of Training</div>
+          </article>
+          <article class="glass-card stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Mobile Applications Developed</div>
+          </article>
+          <article class="glass-card stat-card">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Technologies Applied</div>
+          </article>
+          <article class="glass-card stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Mobile App Development Focus</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Used -->
+    <section class="section" id="tech-stack">
+      <div class="container reveal">
+        <div class="section-head">
+          <h1>Technologies Used</h1>
+          <p class="lead">Core tools and platforms applied throughout the internship.</p>
+        </div>
+        <div class="tech-grid stagger-reveal">
+          <div class="glass-card tech-card"><span class="tech-dot"></span>Flutter</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>Dart</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>REST API</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>Firebase</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>Git</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>Figma</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>UI/UX Design</div>
+          <div class="glass-card tech-card"><span class="tech-dot"></span>Testing & QA</div>
+        </div>
+      </div>
+    </section>
 
     <!-- Table of Contents -->
     <section class="section" id="contents">
@@ -134,51 +191,48 @@
         </div>
         <div class="toc-grid stagger-reveal">
           <a class="glass-card" href="introduction.html">
-            <span style="font-size:1.3rem; display:block; margin-bottom:0.5rem;">🏢</span>
             <strong>1. Introduction</strong><br>
-            <span style="font-size: 0.84rem; color: var(--muted); font-weight: 400;">Background � Objectives � Vision
-              �
-              Org Chart</span>
+            <span class="lead" style="font-size: 0.85rem;">Background &bull; Vision &bull; Org Chart</span>
           </a>
+          <!-- other cards would be here, reconstructing from memory/intro patterns -->
           <a class="glass-card" href="acknowledgements.html">
-            <span style="font-size:1.3rem; display:block; margin-bottom:0.5rem;">💛</span>
             <strong>2. Acknowledgements</strong><br>
-            <span style="font-size: 0.84rem; color: var(--muted); font-weight: 400;">Gratitude to everyone who
-              helped</span>
+            <span class="lead" style="font-size: 0.85rem;">Professional gratitude</span>
           </a>
           <a class="glass-card" href="activity-summary.html">
-            <span style="font-size:1.3rem; display:block; margin-bottom:0.5rem;">📅</span>
             <strong>3. Activity Summary</strong><br>
-            <span style="font-size: 0.84rem; color: var(--muted); font-weight: 400;">Weekly logbook � 20 weeks</span>
+            <span class="lead" style="font-size: 0.85rem;">Timeline &bull; 20 weeks</span>
           </a>
           <a class="glass-card" href="technical-report.html">
-            <span style="font-size:1.3rem; display:block; margin-bottom:0.5rem;">🛠️</span>
             <strong>4. Technical Report</strong><br>
-            <span style="font-size: 0.84rem; color: var(--muted); font-weight: 400;">Tasks performed � Projects
-              showcase</span>
+            <span class="lead" style="font-size: 0.85rem;">Technical tasks &bull; Featured projects</span>
           </a>
           <a class="glass-card" href="conclusion.html">
-            <span style="font-size:1.3rem; display:block; margin-bottom:0.5rem;">🌸</span>
             <strong>5. Conclusion</strong><br>
-            <span style="font-size: 0.84rem; color: var(--muted); font-weight: 400;">Suggestions � Overall
-              reflection</span>
-          </a>
-          <a class="glass-card" href="contents.html">
-            <span style="font-size:1.3rem; display:block; margin-bottom:0.5rem;">📋</span>
-            <strong>Full Contents Page</strong><br>
-            <span style="font-size: 0.84rem; color: var(--muted); font-weight: 400;">Detailed table of contents</span>
+            <span class="lead" style="font-size: 0.85rem;">Suggestions &bull; Final reflection</span>
           </a>
         </div>
       </div>
-    </section>
-  </main>
+    </section>\n</main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>2026 Nur Aina Syazalina � Internship Portfolio</p>
+      <p>&copy; 2026 Nur Aina Syazalina &mdash; Internship Portfolio</p>
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
