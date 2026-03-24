@@ -1343,6 +1343,28 @@ p:last-child {
   line-height: 1.6;
 }
 
+.org-chart-figure {
+  margin: 1.5rem 0;
+}
+
+.org-chart-image {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.org-chart-figure figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 /* ═══════════════════════════════════════════════════════════
    Section Navigation (bottom prev / next)
 ═══════════════════════════════════════════════════════════ */
