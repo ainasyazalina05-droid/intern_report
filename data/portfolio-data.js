@@ -3,71 +3,72 @@ window.portfolioData = {
     eyebrow: "Internship Portfolio 2026",
     name: "Nur Aina Syazalina",
     tagline:
-      "Designing meaningful digital experiences through practical internship projects and technical delivery."
+      "Documenting practical internship experience in mobile application development and technical support."
   },
   about: {
     background:
-      "Interned at [Organization Name] as a [Role] from [Month Year] to [Month Year].",
+      "Industrial training was completed at Tarsoft Sdn Bhd with a focus on mobile application development and related technical tasks.",
     mission:
-      "[Insert your organization's mission and how your internship tasks supported that mission.]",
+      "The organization delivers software and digital solutions that support business needs and digital transformation.",
     visionRole:
-      "[Insert your organization's vision and summarize your responsibilities, collaboration, and contribution.]"
+      "Support was given through UI development, API integration, testing, issue fixing, and training assistance during the internship period."
   },
   projects: [
     {
       kicker: "Project 1",
-      title: "[Project Name 1]",
+      title: "Reward Feature Support",
       summary:
-        "[Brief project overview. Mention user problem, your role, and impact.]",
-      stack: "[Example: Flutter, Firebase, REST API]",
-      outcome: "[Example: Improved task completion speed by 25%.]",
+        "Support was provided for reward-related UI updates and API-related feature work in the mobile application.",
+      stack: "Flutter, Dart, REST API",
+      outcome: "Improved understanding of feature flow, testing, and UI updates.",
       image: "images/project1.svg",
       alt: "Project 1 interface preview"
     },
     {
       kicker: "Project 2",
-      title: "[Project Name 2]",
+      title: "Attendance and Profile Tasks",
       summary:
-        "[Brief project overview. Highlight your ownership and collaboration.]",
-      stack: "[Example: React, Node.js, MongoDB]",
+        "Work was carried out on attendance and profile-related tasks through layout updates, testing, and API checking.",
+      stack: "Flutter, Dart, API Integration",
       outcome:
-        "[Example: Increased process efficiency and reduced manual work.]",
+        "Knowledge of application testing and integration work was strengthened.",
       image: "images/project2.svg",
       alt: "Project 2 interface preview"
     },
     {
       kicker: "Project 3",
-      title: "[Project Name 3]",
+      title: "Training Support Materials",
       summary:
-        "[Brief project overview. Mention UX improvements or technical challenge solved.]",
-      stack: "[Example: HTML, CSS, JavaScript]",
-      outcome: "[Example: Delivered polished UI with responsive support.]",
+        "Assistance was given in Flutter training sessions through preparation of modules, quizzes, and presentation materials.",
+      stack: "Flutter, Git, Documentation",
+      outcome: "Experience in teamwork, documentation, and training support was improved.",
       image: "images/project3.svg",
       alt: "Project 3 interface preview"
     }
   ],
   technicalSummary: {
     tasks: [
-      "Designed and implemented responsive UI components for web and mobile contexts.",
-      "Integrated APIs and validated data flows across feature modules.",
-      "Performed debugging, testing, and iteration based on mentor feedback."
+      "Developed and updated Flutter UI components based on assigned requirements.",
+      "Integrated APIs into features with guidance and checked data display.",
+      "Performed testing, fixed minor issues, and assisted in training activities."
     ],
     achievements: [
-      "Completed [X] assigned features within internship timeline.",
-      "Reduced UI inconsistencies through reusable component patterns.",
-      "Strengthened team documentation and handover clarity."
+      "Completed assigned internship tasks across UI, testing, and support work.",
+      "Improved familiarity with mobile application workflow and API usage.",
+      "Strengthened communication, task management, and practical problem-solving."
     ]
   },
   conclusion:
-    "The internship developed my technical confidence, communication with stakeholders, and practical delivery mindset. I learned to balance clean implementation, user needs, and timeline constraints while continuously improving through feedback.",
+    "The internship provided practical exposure to mobile application development, testing, and teamwork, and it built a stronger foundation for future work in the IT industry.",
   comments: {
-    supervisor: "[Insert comment from supervisor or team lead.]",
+    supervisor: "Guidance from the supervisor and team members supported steady improvement throughout the internship.",
     future:
-      "[Insert recommendations for next internship cycle, process, or technical enhancements.]"
+      "Clearer documentation and task guidance would further improve the internship experience for future students."
   },
   references: [
-    "[Author, A. A. (Year). Title. Source.]",
-    "[Organization Name. (Year). Internal documentation/report.]"
+    "Flutter Documentation - https://flutter.dev",
+    "Laravel Documentation - https://laravel.com",
+    "Git Documentation - https://git-scm.com"
   ],
   footer: "2026 Nur Aina Syazalina - Internship Portfolio"
 };

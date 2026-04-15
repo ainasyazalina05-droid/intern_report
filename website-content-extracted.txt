@@ -1,0 +1,200 @@
+# INTERNSHIP REPORT
+
+## 1.0 Introduction
+
+### 1.1 Industrial Training
+
+Industrial training is a structured program that provides students with practical experience in a real working environment. It helps bridge the gap between theoretical knowledge and real-world industry practices. Through this training, students develop technical skills, soft skills, and professional work ethics.
+
+### 1.2 Company Background
+
+Tarsoft Sdn Bhd, established in 2020, is a software development company that provides digital solutions including mobile application development, web development, and software systems. The company serves both local and international clients by delivering solutions based on business requirements. Tarsoft focuses on using modern technologies to support digital processes and business needs.
+
+### 1.3 Objectives of the Organization
+
+- To provide software and digital solutions
+- To support business digital transformation
+- To deliver reliable and efficient systems
+- To build long-term client relationships
+
+### 1.4 Vision and Mission
+
+Vision:
+To be a trusted technology solutions provider.
+
+Mission:
+
+- To deliver quality IT solutions
+- To meet client requirements effectively
+- To continuously improve through learning
+- To build long-term relationships with clients
+
+### 1.5 Core Strengths
+
+- Experienced development team
+- Ability to handle various projects
+- Focus on quality and client satisfaction
+
+### 1.6 Organizational Structure
+
+The organization consists of several departments including Software Engineering, Mobile Application Development, Project Management, and Web Development teams that work together to ensure successful project delivery.
+
+### 1.7 Department Functions
+
+Software Engineering Department
+Responsible for developing, testing, and maintaining software systems.
+
+Mobile Application Department
+Focuses on developing and maintaining mobile applications.
+
+Project Team
+Handles project planning, coordination, and communication.
+
+Web Development Team
+Responsible for website development and maintenance.
+
+### 1.8 Future Plans
+
+- Expand client base
+- Improve technology adoption
+- Enhance mobile and web development
+- Continuously improve service quality
+
+## 2.0 Acknowledgements
+
+Alhamdulillah, all praise to Allah S.W.T for the strength and opportunity to complete this internship successfully.
+
+I would like to express my sincere gratitude to Tarsoft Sdn Bhd for providing me with the opportunity to gain valuable industry experience. Special thanks to my supervisor and team members for their guidance, support, and knowledge throughout the internship.
+
+I would also like to thank my family and friends for their encouragement and support.
+
+## 3.0 Activity Summary
+
+### Phase 1: Learning (Weeks 1-5)
+
+- Learned basic Laravel concepts and Git workflow
+- Explored company systems and applications
+- Started basic UI development tasks
+
+### Phase 2: Development (Weeks 6-10)
+
+- Performed UI improvements
+- Fixed minor UI issues and tested features
+
+### Phase 3: Implementation (Weeks 11-15)
+
+- Integrated APIs into application features with guidance
+- Worked on internal projects
+
+### Phase 4: Completion (Weeks 16-20)
+
+- Enhanced UI and application features
+- Assisted in training sessions
+- Conducted testing and improvements
+
+## 4.0 Technical Report
+
+### 4.1 Tasks Performed
+
+- Developed basic mobile application features using Flutter
+- Updated and improved UI based on requirements
+- Integrated APIs into features with guidance
+- Performed testing and fixed minor UI issues
+- Assisted in training sessions and prepared materials
+- Used Git for basic version control
+
+### 4.2 Technical Work and Responsibilities
+
+Mobile Development
+
+- Developed and updated Flutter UI components
+- Adjusted layouts based on feedback
+
+API Integration
+
+- Assisted in integrating APIs
+- Verified API responses and data display
+
+Testing and Troubleshooting
+
+- Performed testing on application features
+- Identified and fixed minor UI issues
+- Reported issues when necessary
+
+Training Support
+
+- Assisted in Flutter training sessions
+- Helped prepare modules and slides
+
+### 4.3 Key Learning Outcomes
+
+Technical Skills
+
+- Basic Flutter development
+- API integration with guidance
+- Testing and troubleshooting
+
+Professional Skills
+
+- Communication with team members
+- Task coordination
+- Time management and task organization
+
+Problem-Solving Skills
+
+- Identifying issues through testing
+- Fixing simple issues step by step
+- Learning through guidance and practice
+
+### 4.4 Challenges and Solutions
+
+Challenges
+
+- Difficulty understanding new systems and codebase
+- Limited experience with API integration
+- Difficulty identifying causes of errors
+- Communication gaps
+
+Solutions
+
+- Asked team leader for guidance
+- Conducted self-research before asking
+- Referred to documentation
+- Tested step by step
+- Improved communication
+
+## 5.0 Conclusion
+
+The 20-week internship provided valuable exposure to a real working environment in mobile application development. During this period, involvement was mainly in UI development, API integration, testing, and assisting in training activities.
+
+This experience helped improve technical skills such as Flutter development and API usage, as well as soft skills including communication, time management, and teamwork. I also learned to manage time and daily tasks more systematically in a real work environment.
+
+Although there are still areas for improvement, this internship has provided a strong foundation for future work in the IT industry.
+
+## 6.0 Suggestions
+
+For Company
+
+- Provide clearer task instructions
+- Improve documentation for interns
+
+For Polytechnic
+
+- Include more practical projects
+- Emphasize modern frameworks like Flutter
+
+For Students
+
+- Practice coding regularly
+- Improve communication skills
+- Be proactive in learning
+
+## 7.0 Bibliography
+
+- Flutter Documentation - https://flutter.dev
+- Laravel Documentation - https://laravel.com
+- Git Documentation - https://git-scm.com
+
+## 8.0 Comments and Suggestions
+
+The internship provided valuable experience in mobile application development and teamwork. It helped improve understanding of real project workflows. However, clearer guidance and documentation would improve the experience further.

@@ -192,42 +192,42 @@ document.querySelectorAll(".dropdown-card").forEach((details) => {
 const projects = [
   {
     kicker: "Project 1",
-    title: "Cloverly Home Experience",
-    summary: "Built and refined core home screen components to improve clarity, consistency, and first-use experience for users.",
+    title: "Reward Feature Support",
+    summary: "UI updates and API-related support were provided for reward-related application features during the internship.",
     tech: ["Flutter", "Dart", "REST API"],
     features: [
-      "Personalized home layout modules",
-      "Reusable widget structure",
-      "Responsive spacing refinements"
+      "Reward screen UI updates",
+      "API response checking",
+      "Minor issue fixing"
     ],
     image: "images/project1.svg",
-    alt: "Cloverly home screen preview"
+    alt: "Reward feature preview"
   },
   {
     kicker: "Project 2",
-    title: "Floristo Content Module",
-    summary: "Implemented and polished content-driven screens with stronger structure and readable presentation for dynamic data.",
-    tech: ["Flutter", "Dart", "Component-based UI"],
+    title: "Attendance and Profile Tasks",
+    summary: "Support was given for attendance and profile-related features through UI adjustments, API integration, and testing.",
+    tech: ["Flutter", "Dart", "API Integration"],
     features: [
-      "Dynamic content rendering",
-      "Readable card hierarchy",
-      "Reusable content sections"
+      "Attendance feature assistance",
+      "Profile-related updates",
+      "Testing and verification"
     ],
     image: "images/project2.svg",
-    alt: "Floristo content module preview"
+    alt: "Attendance and profile feature preview"
   },
   {
     kicker: "Project 3",
-    title: "Membership & Menu Flow",
-    summary: "Handled UI and behavior updates for membership and menu-related flows, including bug fixes and interaction improvements.",
-    tech: ["Flutter", "Dart", "Git", "Debugging"],
+    title: "Training Support Materials",
+    summary: "Assistance was given during Flutter training sessions, including preparation of modules, quizzes, and slides.",
+    tech: ["Flutter", "Git", "Documentation", "Presentation"],
     features: [
-      "Stabilized navigation flow",
-      "Refined modal interactions",
-      "Regression fixes and QA support"
+      "Training module preparation",
+      "Quiz and slide support",
+      "Session assistance"
     ],
     image: "images/project3.svg",
-    alt: "Membership and menu flow preview"
+    alt: "Training support preview"
   }
 ];
 

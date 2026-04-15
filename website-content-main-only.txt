@@ -1,0 +1,441 @@
+===== acknowledgements.html =====
+Title: Internship Report | Acknowledgements
+Section 2 of 5
+Acknowledgements
+Alhamdulillah - all praise is given to Allah S.W.T for the blessings and guidance by which this
+internship was completed with dedication and purpose. The completion of this report would not have been
+possible without the support, patience, and trust that were given throughout this journey.
+&#129330;
+Allah (S.W.T)
+For the strength, health, and opportunity by which this industrial training was completed successfully.
+&#128104;‍&#128105;‍&#128103;
+Family
+To parents and family members for the continuous support, prayers, and encouragement that were given
+throughout the period of study and internship.
+&#127970;
+Company
+To Tarsoft Sdn Bhd for the opportunity that was given for learning and growth within a
+professional environment.
+&#128105;‍&#128188;
+Supervisor
+To the industry supervisor for the invaluable guidance, patience, and technical knowledge that were
+shared throughout these 20 weeks.
+&#129309;
+Team Members
+To all the developers and colleagues by whom assistance and collaboration were provided, through which
+the workplace was made an inspiring place for growth.
+&#128155;
+Friends
+To fellow interns and friends for the shared experiences and mutual support by which this journey was
+made memorable.
+Introduction
+Activity Summary
+
+===== activity-summary.html =====
+Title: Internship Journey | 20 Weeks of Growth
+📆 20 Weeks Journey
+My Internship Adventure
+From orientation to handover — a timeline of growth, challenges, and achievements
+20
+Weeks of Learning
+4
+Project Phases
+∞
+New Skills
+⚡ Phase 1: Foundation (Weeks 1-5)
+Week 1
+🌱 Orientation & Setup
+Company orientation, HR briefing, dev environment setup, team introductions
+🏁 First steps
+Week 2
+🔍 Codebase Exploration
+Repository walkthrough, Flutter architecture, UI component library review
+📚 Learning
+Week 3
+🎨 First UI Tasks
+Implemented initial UI changes, design alignment, first PR submitted
+🚀 First contribution
+Week 4
+✨ Refinement Phase
+Responsive fixes, spacing adjustments, design system alignment
+🎯 Attention to detail
+Week 5
+🔌 API Integration
+Connected UI to REST endpoints, error handling, loading states
+⚙️ Technical deep dive
+📈 Phase 2: Growth (Weeks 6-10)
+Week 6
+🐛 Bug Squashing
+UI defect resolution, debugging techniques, issue reproduction
+🔨 Problem solver
+Week 7
+🎯 Design System Alignment
+Typography standardization, color consistency, component unification
+🎨 Design eye
+Week 8
+🔄 User Flow Optimization
+Navigation improvements, interaction enhancements, UX refinements
+💫 UX focus
+Week 9
+✅ Quality Assurance
+Regression testing, bug verification, stability checks
+🔬 Detail oriented
+Week 10
+📝 Testing & Documentation
+Test case documentation, issue logging, QA collaboration
+📋 Process driven
+🚀 Phase 3: Mastery (Weeks 11-15)
+Week 11
+🔄 Component Refactoring
+Reusable widgets, code optimization, maintainability improvements
+🏗️ Architecture
+Week 12
+⚡ State Management
+Async handling, state updates, performance optimization
+🧠 Advanced concepts
+Week 13
+✨ Feature Enhancement
+New UI features, micro-interactions, animation refinements
+🎯 Impact driven
+Week 14
+🤝 Cross-team Sync
+Design reviews, developer collaboration, feedback sessions
+🗣️ Communication
+Week 15
+⚡ Performance Tuning
+Render optimization, data-heavy screens, responsiveness
+📊 Analytics
+🎯 Phase 4: Delivery (Weeks 16-20)
+Week 16
+📦 Release Prep
+Critical flow verification, issue triage, pre-release checks
+🚀 Launch ready
+Week 17
+📚 Documentation
+Technical notes, handover docs, process documentation
+📖 Knowledge sharing
+Week 18
+✨ Final Polish
+Visual refinements, consistency checks, pixel perfect fixes
+🎨 Perfectionist
+Week 19
+✅ Final Testing
+End-to-end testing, regression verification, sign-offs
+🔍 Quality check
+Week 20
+🎓 Reflection & Handover
+Final presentation, knowledge transfer, internship completion
+🌟 Milestone
+💡 Key Takeaways
+Technical Growth
+Flutter mastery, API integration, state management, performance optimization
+Soft Skills
+Team collaboration, communication, problem-solving, time management
+Professional
+Code reviews, documentation, agile methodology, project delivery
+Acknowledgements
+Technical Report
+
+===== bibliography.html =====
+Title: Internship Creative Report | Bibliography
+Bibliography
+Add APA placeholder citation here.
+Add MLA placeholder citation here.
+Insert additional reference placeholder list here.
+
+===== comments-suggestions.html =====
+Title: Internship Creative Report | Comments and Suggestions
+Comments and Suggestions
+Insert feedback placeholder on training experience here.
+Add constructive recommendation placeholder here.
+
+===== conclusion.html =====
+Title: Internship Report | Conclusion
+Section 5 of 5
+Conclusion
+Reflections and recommendations from the training period.
+✨ End of Industrial Training
+Twenty weeks of learning, building, and growing - here are the final reflections and recommendations from
+this internship journey.
+Suggestions for the Organization / Polytechnic / Students
+Overall Conclusion
+The 20-week industrial training program was found to be an effective bridge between knowledge gained in
+polytechnic and actual workplace practices.
+During the internship, involvement was given to many parts of a mobile app project, including testing,
+bug fixing, and API integration. A deeper understanding of how a real project is set up and how
+different parts of a system work together was gained through these tasks.
+It was also learned that more than technical skills are required for effective work in a group. To
+ensure that tasks are completed correctly and on time, clear communication, timely questions, and proper
+time management are needed. Improvement was also supported by feedback that was given by team members,
+and lessons were learned from mistakes.
+Further improvement is still needed, especially in problem-solving and in carrying out tasks
+independently with greater confidence. Through this internship, a better understanding of the industry
+was gained, and the skills that still need to be developed were identified.
+Overall, greater interest in mobile app development was developed through this experience, and better
+preparation for future work in the field was achieved.
+Technical Report
+
+===== contents.html =====
+Title: Internship Creative Report | Full Contents
+Table of Contents
+The full report can be navigated in the intended order.
+1. Hero / Report Header
+2. Introduction
+3. Organization Background
+4. Internship Overview
+5. Technologies Used
+6. Activity Timeline (20 Weeks)
+7. Technical Work & Responsibilities
+8. Project Showcase
+9. Key Learning Outcomes
+10. Challenges & Problem Solving
+11. Conclusion
+12. Acknowledgements
+
+===== index.html =====
+Title: Nur Aina Syazalina | Internship Report
+Industrial Training Report • 2026
+Industrial Training Report
+Mobile Application Development Internship
+A structured digital report is presented to document a 20-week
+internship experience, with mobile application development, teamwork, and overall growth being highlighted.
+Student
+Nur Aina Syazalina
+Program
+Diploma in Information Technology
+Institution
+Politeknik Sultan Idris Shah
+Year
+2026
+Start Reading
+Technical Report
+Report Snapshot
+Professional Summary
+20-week industrial training focused on mobile application
+development.
+Hands-on experience with real-world product features, QA, and
+iterative delivery.
+Emphasis on clean UI implementation, API integration, and teamwork
+workflows.
+Executive Summary
+An industrial training experience at Tarsoft Sdn Bhd is outlined in this report.
+Valuable exposure to real-world software development processes, project management practices, and
+collaborative teamwork within a professional IT environment was provided by the training.
+Throughout the training period, hands-on experience in software and mobile application development was
+gained, technical skills were enhanced, and communication and problem-solving abilities were improved. An
+overview of the organization, its objectives, structure, and future direction is presented in this report,
+together with the learning outcomes gained during the training.
+Internship Outcome Stats
+A concise overview of the training impact and deliverables.
+20
+Weeks of Training
+3
+Mobile Applications Developed
+8+
+Technologies Applied
+100%
+Mobile App Development Focus
+Technologies Used
+Core tools and platforms applied throughout the internship.
+Flutter
+Dart
+REST API
+Git
+UI/UX Design
+Table of Contents
+Open any section directly.
+1. Introduction
+Background • Vision • Org Chart
+2. Acknowledgements
+Professional gratitude
+3. Activity Summary
+Timeline • 20 weeks
+4. Technical Report
+Technical tasks • Featured projects
+5. Conclusion
+Suggestions • Final reflection
+
+===== introduction.html =====
+Title: Internship Report | Introduction
+Section 1 of 7
+Introduction
+An overview of Tarsoft Sdn Bhd and the objectives of this industrial training is presented.
+&#128161;
+1.1 What is Industrial Training?
+Industrial training is a structured program designed to provide students with practical working experience
+in a real industry environment. The gap between theoretical knowledge learned in academic studies and
+real-world professional practice is bridged through this training. Through industrial training, technical
+competencies, soft skills, and professional ethics are developed to prepare students for future careers.
+1.2 Background of the Organization
+Established in 2020, Tarsoft Sdn Bhd has been recognized as a prominent player in the
+software development and digital solutions industry. Comprehensive services are provided by the company,
+including:
+Software Development
+Web Development
+Mobile Application Development
+Creative Design Solutions
+Clients are served by Tarsoft Sdn Bhd both locally and internationally. With a strong commitment to
+excellence and innovation, cutting-edge technologies and a skilled team of professionals are utilized to
+deliver customized solutions tailored to the needs of businesses across various industries.
+1.3 Objectives of the Organization
+Malaysia's technology ecosystem is intended to be strengthened by Tarsoft Sdn Bhd through the delivery
+of innovative and high-quality digital solutions. With more than 50 satisfied clients ranging from
+startups to established enterprises, focus is placed on:
+Developing innovative and scalable software solutions
+Supporting digital transformation for businesses
+Providing reliable and efficient IT services
+Building long-term partnerships with clients
+Boundaries are continuously pushed by the organization so that businesses may thrive in today's
+competitive digital landscape.
+1.4 Vision and Mission
+Vision: To become a leading and trusted technology solutions provider recognized for
+innovation, quality, and customer satisfaction.
+Mission:
+To deliver high-quality and innovative IT solutions
+To exceed client expectations through professionalism and expertise
+To continuously improve through technological advancement and skill development
+To build strong, long-term relationships with clients
+1.5 Core Strengths
+Expertise You Can Trust
+With years of experience in the IT industry, strong technical knowledge and practical expertise are
+possessed by Tarsoft's team. Projects across various sectors have been successfully delivered by the
+company using proven technologies and development methodologies.
+Proven Track Record
+Numerous successful projects have been completed by Tarsoft Sdn Bhd, and a strong portfolio is
+maintained. The company's dedication to quality, reliability, and measurable results is reflected in
+client testimonials and case studies.
+Satisfied Clients
+A solid reputation has been built by the organization through consistent performance and innovation. The
+digital goals of many businesses have been achieved through Tarsoft's tailored solutions.
+1.6 Organizational Chart
+Efficient project delivery and client satisfaction are supported by the organizational structure.
+Organizational Chart of Tarsoft Sdn Bhd
+1.7 Department Functions
+Software Engineering Department
+Responsibility is held for designing, developing,
+testing, and maintaining software systems. Assurance is provided by this department that all software
+solutions meet client requirements and industry standards.
+Mobile Application Department
+Attention is given to developing and maintaining
+mobile applications for Android and iOS platforms. User-friendly design, smooth performance, and high
+security are ensured by the team.
+Project Team
+Project planning, scheduling, client communication, requirement
+analysis, and overall coordination are managed to ensure that projects are delivered on time and within
+scope.
+Web Expert
+Website design and development, including theme customization, plugin
+integration, content updates, and performance optimization, are handled. Responsive, user-friendly, and
+secure websites are ensured while collaboration with the team is carried out to deliver polished digital
+solutions.
+1.8 Organization's Direction / Future Plans
+The following aims are held by Tarsoft Sdn Bhd:
+Expand its client base internationally
+Adopt emerging technologies such as AI and cloud solutions
+Enhance mobile and web application capabilities
+Strengthen research and development efforts
+Continuously improve service quality and customer satisfaction
+Official Website: https://tarsoft.com.my
+Acknowledgements
+
+===== organizational-background.html =====
+Title: Internship Creative Report | Organizational Background
+Organizational Background
+A company introduction should be placed here.
+Organizational Chart of Tarsoft Sdn Bhd
+An establishment history section should be placed here.
+An organization activities section should be placed here.
+A mission, vision, and direction section should be placed here.
+
+===== projects.html =====
+Title: Internship Creative Report | Projects
+Projects
+Navigation can be performed by swiping on mobile or by using the buttons.
+
+===== technical-report.html =====
+Title: Internship Report | Technical Report
+Section 4 of 5
+Technical Report
+Tasks performed and featured project highlights.
+Tasks Performed
+Throughout the internship, a range of mobile development tasks were undertaken using Flutter and Dart,
+contributing directly to the company's live product ecosystem.
+Development Workspace
+Professional Flutter development environment.
+UI Development: Developed and refined responsive UI components for home, menu, and
+membership screens based on design specifications and assigned feature requirements.
+Component Architecture: Applied component-based development practices to extract
+reusable widgets, improving code maintainability and reducing duplication across modules.
+API Integration: Integrated REST API endpoints into data-driven screens, handled
+asynchronous states, and implemented error and empty state handling for improved user experience.
+Bug Fixing & QA: Identified, traced, and resolved visual and interaction bugs using
+systematic debugging workflows. Conducted regression checks after each fix to ensure no new issues were
+introduced.
+Version Control: Used Git-based workflows for branch management, commit conventions,
+code review participation, and collaborative push/merge operations throughout the internship period.
+Projects
+Featured Projects
+Select a project to view technical highlights.
+Swipe on mobile · Use buttons on desktop
+Technical Work & Responsibilities
+Key internship tasks grouped by responsibility area.
+Mobile Development
+Built and refined Flutter UI components for production screens.
+Applied responsive layouts for multiple device sizes.
+Implemented reusable widgets to reduce duplication.
+UI/UX Design
+Aligned layouts with design references and team feedback.
+Improved spacing, typography, and visual consistency.
+Enhanced user flows for navigation and modal behavior.
+API Integration
+Connected UI to REST endpoints and validated data rendering.
+Handled loading, empty, and error states for reliability.
+Verified API responses with real data scenarios.
+Testing & Debugging
+Logged defects with clear reproduction steps.
+Performed regression checks after fixes.
+Collaborated with QA to validate releases.
+Key Learning Outcomes
+Capabilities strengthened throughout the internship.
+Technical Skills
+Flutter UI composition and layout control.
+Component reuse and maintainable structure.
+API-driven UI workflows.
+Professional Skills
+Clear status updates and documentation habits.
+Version control and collaboration workflow.
+Structured QA communication.
+Problem-Solving
+Root-cause investigation of UI defects.
+Iterative refinement based on feedback.
+Edge case handling for data states.
+Team Collaboration
+Alignment with design and engineering peers.
+Participated in review cycles and revisions.
+Support across multiple modules.
+Challenges & Solutions
+Common obstacles encountered and how they were addressed.
+Challenge
+Inconsistent layout behavior across different screen sizes.
+Solution
+Introduced responsive constraints, tested breakpoints, and standardized spacing.
+Challenge
+Unexpected API response formats during integration.
+Solution
+Added validation, error handling, and fallback UI states for stability.
+Challenge
+Regression issues after iterative UI updates.
+Solution
+Implemented focused regression checks and documented fixes for repeatability.
+Challenge
+Balancing design precision with delivery timelines.
+Solution
+Prioritized high-impact screens and aligned milestones with supervisor feedback.
+Activity Summary
+Conclusion
+
+===== training-activities.html =====
+Title: Internship Creative Report | Training Activities
+Summary of Industrial Training Activities
+Insert weekly task-based activity placeholder here.
+Insert roles and responsibilities placeholder here.
