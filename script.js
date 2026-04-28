@@ -1,4 +1,4 @@
-﻿/* ─── Nav toggle ─────────────────────────────────────────── */
+/* ─── Nav toggle ─────────────────────────────────────────── */
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -343,3 +343,101 @@ if (themeToggle) {
     }
   });
 }
+
+/* ─── Lightbox Viewer ────────────────────────────────────── */
+function initLightbox() {
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.innerHTML = `
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8592;</button>
+      <img src="" alt="" class="lightbox-image">
+      <div class="lightbox-placeholder" style="display:none; color:white; font-size:4rem;">📸</div>
+      <button class="lightbox-nav lightbox-next" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="lightbox-caption"></div>
+    <div class="lightbox-counter"></div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const img = lightbox.querySelector(".lightbox-image");
+  const placeholder = lightbox.querySelector(".lightbox-placeholder");
+  const caption = lightbox.querySelector(".lightbox-caption");
+  const counter = lightbox.querySelector(".lightbox-counter");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const prevBtn = lightbox.querySelector(".lightbox-prev");
+  const nextBtn = lightbox.querySelector(".lightbox-next");
+
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  function updateLightbox() {
+    const item = currentGallery[currentIndex];
+    const sourceImg = item.querySelector("img");
+    const timelineContent = item.closest(".timeline-content");
+    const weekTitle = timelineContent ? timelineContent.querySelector(".timeline-week").textContent : "Internship";
+
+    if (sourceImg) {
+      img.src = sourceImg.src;
+      img.alt = sourceImg.alt;
+      img.style.display = "block";
+      placeholder.style.display = "none";
+    } else {
+      img.style.display = "none";
+      placeholder.style.display = "block";
+    }
+
+    caption.textContent = `${weekTitle} - Photo ${currentIndex + 1}`;
+    counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+  }
+
+  function openLightbox(gallery, index) {
+    currentGallery = gallery;
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".week-gallery").forEach((galleryEl) => {
+    const items = [...galleryEl.querySelectorAll(".gallery-item")];
+    items.forEach((item, index) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        openLightbox(items, index);
+      });
+    });
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateLightbox();
+  });
+
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    updateLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "ArrowRight") nextBtn.click();
+  });
+}
+
+initLightbox();
