@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════
    Design Tokens
 ═══════════════════════════════════════════════════════════ */
 :root {
@@ -2136,3 +2136,112 @@ p:last-child {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+
+/* ─── Print Styles ────────────────────────────────────────── */
+@media print {
+  .site-header, .site-footer, .back-to-top, .theme-toggle, .week-nav-container, .project-controls, .project-dots, .hint-text, .section-nav, .bg-layer, .float-orb, .lightbox {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .section {
+    padding: 2rem 0 !important;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  .glass-card, .panel, .dropdown-card {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .dropdown-body {
+    max-height: none !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  details:not([open]) summary {
+    display: block !important;
+  }
+
+  details:not([open]) .dropdown-body {
+    display: block !important;
+  }
+
+  .timeline::before {
+    display: none !important;
+  }
+
+  .timeline-content {
+    width: 100% !important;
+    border-left: 4px solid var(--accent) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .timeline-content::before {
+    display: none !important;
+  }
+
+  .week-gallery {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+
+/* ─── Page Transitions ────────────────────────────────────── */
+body {
+  animation: fadeInPage 0.6s ease-out;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ─── Custom Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 3px solid var(--bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+
+

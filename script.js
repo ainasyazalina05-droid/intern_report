@@ -441,3 +441,52 @@ function initLightbox() {
 }
 
 initLightbox();
+
+/* ─── Counter Animation ───────────────────────────────────── */
+function initCounters() {
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const targetStr = el.innerText;
+          const target = parseFloat(targetStr);
+          if (isNaN(target)) return;
+
+          let count = 0;
+          const duration = 1500;
+          const startTime = performance.now();
+
+          const update = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const ease = progress * (2 - progress);
+            count = ease * target;
+
+            let displayCount = Math.floor(count);
+            if (targetStr.includes('%')) displayCount += '%';
+            if (targetStr.includes('+')) displayCount += '+';
+
+            el.innerText = displayCount;
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              el.innerText = targetStr;
+            }
+          };
+
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".stat-number").forEach((num) => counterObserver.observe(num));
+}
+
+initCounters();
+
