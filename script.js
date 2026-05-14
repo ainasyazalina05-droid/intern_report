@@ -16,6 +16,18 @@ document.querySelectorAll(".nav-menu a").forEach((link) => {
   });
 });
 
+/* ─── Header Scroll Effect ─────────────────────────────── */
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      siteHeader.classList.add("scrolled");
+    } else {
+      siteHeader.classList.remove("scrolled");
+    }
+  });
+}
+
 /* ─── Scroll Tracker & Back to Top ────────────────────────── */
 const scrollProgress = document.createElement("div");
 scrollProgress.id = "scrollProgress";
