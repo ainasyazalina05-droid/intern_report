@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script>(function(){const t=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})();</script>
+  <script>(function () { const t = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", t); })();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Internship Journey | 20 Weeks of Growth</title>
@@ -14,6 +14,12 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    .reveal,
+    .stagger-reveal {
+      opacity: 1;
+      transform: none;
+    }
+
     .hero-mini {
       background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 100%);
       padding: 3rem 0;
@@ -58,50 +64,85 @@
       font-weight: 500;
     }
 
+    .activity-layout {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .activity-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .activity-sidebar .week-nav-container {
+      position: static;
+      top: auto;
+      margin: 0;
+      padding: 0.8rem;
+      border-radius: 1.1rem;
+    }
+
+    .activity-sidebar .week-nav-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+    }
+
+    .activity-sidebar .week-nav-btn {
+      aspect-ratio: auto;
+      min-height: 2.2rem;
+      border-radius: 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .activity-sidebar .week-nav-label {
+      font-size: 0.72rem;
+      padding-left: 0.15rem;
+    }
+
     .timeline {
       position: relative;
-      padding: 2rem 0;
+      padding: 0.35rem 0 0;
+      width: 100%;
+      max-width: none;
+      margin: 0;
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
       width: 2px;
       height: calc(100% - 4rem);
       top: 2rem;
       background: linear-gradient(to bottom, var(--accent-soft), var(--accent), var(--accent-soft));
-      opacity: 0.3;
+      opacity: 0.35;
     }
 
     .timeline-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: block;
       margin-bottom: 2rem;
       position: relative;
       scroll-margin-top: 150px;
-    }
-
-    .timeline-item:nth-child(even) {
-      flex-direction: row-reverse;
+      padding-left: 2.25rem;
     }
 
     .timeline-content {
-      width: 45%;
-      padding: 1.5rem;
+      width: 100%;
+      padding: 1.75rem;
       background: var(--glass);
       backdrop-filter: blur(10px);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
       transition: all 0.3s ease;
       position: relative;
-      cursor: pointer;
+      cursor: default;
     }
 
     .timeline-content:hover {
-      transform: scale(1.02) translateY(-3px);
+      transform: translateY(-3px);
       border-color: var(--accent);
       box-shadow: 0 20px 30px -10px rgba(59, 130, 246, 0.2);
     }
@@ -116,14 +157,7 @@
       border: 3px solid var(--bg);
       border-radius: 50%;
       transform: translateY(-50%);
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content::before {
-      right: -45px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content::before {
-      left: -45px;
+      left: -2.9rem;
     }
 
     .timeline-week {
@@ -131,7 +165,7 @@
       padding: 0.25rem 0.75rem;
       background: var(--accent);
       color: white;
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       font-weight: 700;
       border-radius: 2rem;
       margin-bottom: 0.75rem;
@@ -139,17 +173,55 @@
     }
 
     .timeline-title {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       color: var(--primary);
     }
 
     .timeline-tasks {
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.92rem;
+      line-height: 1.7;
       margin: 0;
+    }
+
+    .timeline-content h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 1.25rem 0 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-content h4:first-of-type {
+      margin-top: 0.75rem;
+    }
+
+    .timeline-content ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      list-style-type: none;
+    }
+
+    .timeline-content ul li {
+      position: relative;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-content ul li::before {
+      content: "•";
+      position: absolute;
+      left: -1rem;
+      color: var(--accent);
+      font-weight: bold;
     }
 
     .timeline-badge {
@@ -159,36 +231,54 @@
       padding: 0.25rem 0.75rem;
       background: var(--accent-soft);
       border-radius: 2rem;
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       font-weight: 600;
       color: var(--accent);
       margin-top: 1rem;
     }
 
-    @media (max-width: 768px) {
-      .timeline::before {
-        left: 20px;
+    @media (max-width: 1024px) {
+      .activity-layout {
+        grid-template-columns: 1fr;
       }
 
-      .timeline-item,
-      .timeline-item:nth-child(even) {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 40px;
+      .activity-sidebar {
+        position: static;
+      }
+
+      .activity-sidebar .week-nav-container {
+        margin: 0 0 1.5rem;
+      }
+
+      .activity-sidebar .week-nav-grid {
+        grid-template-columns: repeat(10, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 0;
+      }
+
+      .timeline-item {
+        padding-left: 1.75rem;
       }
 
       .timeline-content {
         width: 100%;
+        padding: 1.35rem;
       }
 
-      .timeline-item:nth-child(odd) .timeline-content::before,
-      .timeline-item:nth-child(even) .timeline-content::before {
-        left: -35px;
-        right: auto;
+      .timeline-content::before {
+        left: -2.4rem;
       }
 
       .stats-highlight {
         grid-template-columns: 1fr;
+      }
+
+      .activity-sidebar .week-nav-grid {
+        grid-template-columns: repeat(5, 1fr);
       }
     }
   </style>
@@ -209,9 +299,9 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="introduction.html">Introduction</a></li>
         <li><a href="acknowledgements.html">Acknowledgements</a></li>
-        <li><a class="active" href="activity-summary.html">Activity Summary</a></li>
-        <li><a href="technical-report.html">Laporan Teknikal</a></li>
-        <li><a href="conclusion.html">Kesimpulan</a></li>
+        <li><a class="active" href="activity-summary.html">Weekly Summary</a></li>
+        <li><a href="technical-report.html">Technical Report</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
         <li><a href="references.html">References</a></li>
         <li class="nav-item-theme">
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
@@ -225,424 +315,618 @@
   </header>
 
   <main>
-    <div class="hero-mini">
+    <section class="section">
       <div class="container">
-        <div class="reveal">
-          <p class="chip">20 Weeks Journey</p>
-          <h1>Industrial Training Journey</h1>
-          <p class="lead">From learning the workflow to contributing to real tasks, the industrial training period was completed through steady progress, guidance, and practical experience.</p>
+        <div class="section-head">
+          <div>
+            <h1>Weekly Summary</h1>
+            <p class="lead">A week-by-week overview of the tasks, responsibilities, and progress achieved throughout the industrial training period.</p>
+          </div>
+        </div>
+
+        <div class="activity-layout">
+
+    <aside class="activity-sidebar reveal" aria-label="Week navigation">
+      <div class="week-nav-container">
+        <div class="week-nav-label">Jump to Week</div>
+        <div class="week-nav-grid">
+          <a href="#week-1" class="week-nav-btn">1</a>
+          <a href="#week-2" class="week-nav-btn">2</a>
+          <a href="#week-3" class="week-nav-btn">3</a>
+          <a href="#week-4" class="week-nav-btn">4</a>
+          <a href="#week-5" class="week-nav-btn">5</a>
+          <a href="#week-6" class="week-nav-btn">6</a>
+          <a href="#week-7" class="week-nav-btn">7</a>
+          <a href="#week-8" class="week-nav-btn">8</a>
+          <a href="#week-9" class="week-nav-btn">9</a>
+          <a href="#week-10" class="week-nav-btn">10</a>
+          <a href="#week-11" class="week-nav-btn">11</a>
+          <a href="#week-12" class="week-nav-btn">12</a>
+          <a href="#week-13" class="week-nav-btn">13</a>
+          <a href="#week-14" class="week-nav-btn">14</a>
+          <a href="#week-15" class="week-nav-btn">15</a>
+          <a href="#week-16" class="week-nav-btn">16</a>
+          <a href="#week-17" class="week-nav-btn">17</a>
+          <a href="#week-18" class="week-nav-btn">18</a>
+          <a href="#week-19" class="week-nav-btn">19</a>
+          <a href="#week-20" class="week-nav-btn">20</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- <div class="activity-main">
+            <div class="timeline stagger-reveal" id="timeline">
+              <div class="timeline-item reveal" id="week-1">
+                <div class="timeline-content">
+                  <span class="timeline-week">Week 1</span>
+                  <h3 class="timeline-title">Laravel Basics & Git</h3>
+                  <p class="timeline-tasks">During this week, the basics of Laravel were learned, including installation, MVC architecture, and the use of Artisan commands. A simple database was configured and migrations were executed. Existing systems within the company were explored and understanding was presented. Basic Git operations such as pushing and merging code were also practiced. Through these activities, foundational knowledge in Laravel development was gained, including how MVC architecture is structured. Practical knowledge in database configuration, migration execution, and Artisan commands was also acquired. In addition, understanding of version control using Git was improved, along with the ability to analyze system workflows. A noticeable increase in confidence was experienced when working with new technologies and unfamiliar systems, and greater comfort was developed in explaining system processes, improving both technical communication and adaptability in a learning environment.</p>
+                  <div class="week-gallery">
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Ref</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Setup</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸</div>
+                      <div class="gallery-more">+3</div>
+                    </div>
+                  </div>
+                  <span class="timeline-badge">First steps</span>
+                </div>
+              </div>
+
+              <div class="timeline-item reveal" id="week-2">
+                <div class="timeline-content">
+                  <span class="timeline-week">Week 2</span>
+                  <h3 class="timeline-title">SoGo App UI Development</h3>
+                  <p class="timeline-tasks">During this week, the SoGo Application UI was recreated using Flutter Framework, where improvements in layout design, navigation flow, and overall user experience were carried out. Components such as the rewards section were enhanced to improve visibility and usability, and data cleaning tasks using Excel were performed to ensure data accuracy. Through these activities, skills in Flutter UI development were strengthened, particularly in structured layout design, navigation flow management, and reusable component creation. An understanding of UI/UX principles was also gained, including the importance of visual hierarchy and spacing in user experience, along with basic data handling techniques. Improvements in attention to detail in UI design were observed, along with the ability to create more intuitive and user-friendly application layouts. Greater confidence in design decision-making for usability enhancement was also developed.</p>
+                  <div class="week-gallery">
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>System</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Docs</span></div>
+                    </div>
+                  </div>
+                  <span class="timeline-badge">Learning continued</span>
+                </div>
+              </div>
+
+              <div class="timeline-item reveal" id="week-3">
+                <div class="timeline-content">
+                  <span class="timeline-week">Week 3</span>
+                  <h3 class="timeline-title">API Integration & Features</h3>
+                  <p class="timeline-tasks">During this week, API integration was learned and features such as dark mode, onboarding screens, and animations were implemented to enhance the application. The use of SharedPreferences for local data storage was explored, clean coding practices were applied, and project workflows were managed using GitHub. Through these tasks, practical knowledge in API integration and local storage management within applications was gained. Understanding of clean code practices and project organization using GitHub was also improved, which is essential for scalable development. Increased efficiency in writing structured and maintainable code was achieved, along with a better understanding of real-world application functionality. Greater confidence in managing project workflows and implementing user-focused features was also developed.</p>
+                  <div class="week-gallery">
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>UI</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Design</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸</div>
+                      <div class="gallery-more">+1</div>
+                    </div>
+                  </div>
+                  <span class="timeline-badge">First contribution</span>
+                </div>
+              </div>
+
+              <div class="timeline-item reveal" id="week-4">
+                <div class="timeline-content">
+                  <span class="timeline-week">Week 4</span>
+                  <h3 class="timeline-title">Refactoring & API Handling</h3>
+                  <p class="timeline-tasks">During this week, code cleanup and refactoring were performed to improve code readability and maintainability. Navigation flow was enhanced, mock APIs were implemented, real APIs were integrated, and error handling was strengthened to ensure smoother application performance. Through these activities, debugging and troubleshooting skills were developed by identifying issues related to system errors and logic flow. Understanding of modular coding practices was improved, and hands-on experience in API handling and application logic was gained. A significant improvement in problem-solving skills was observed, along with the ability to produce more structured, scalable, and maintainable code.</p>
+                  <div class="week-gallery">
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Fixes</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Layout</span></div>
+                    </div>
+                  </div>
+                  <span class="timeline-badge">Attention to detail</span>
+                </div>
+              </div>
+ 
+              <div class="timeline-item reveal" id="week-5">
+                <div class="timeline-content">
+                  <span class="timeline-week">Week 5</span>
+                  <h3 class="timeline-title">Error Handling & UI Polishing</h3>
+                  <p class="timeline-tasks">During this week, the error handling mechanism within the application was thoroughly tested and improved to ensure better handling of unexpected scenarios. Code cleanup was performed to improve readability and maintainability, and the SOGO application UI was refined. Through these activities, debugging skills were further strengthened by identifying issues in system errors and logic flow. A deeper understanding of clean coding practices was gained, particularly in code organization for better reusability, along with improved ability in refining UI components for a more polished design. An overall improvement in application stability and reliability was achieved, as the system became more capable of handling errors effectively. Stronger attention to detail in both coding and UI design was also developed, contributing to a more refined and user-friendly application.</p>
+                  <div class="week-gallery">
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Test</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">📸<span>Logs</span></div>
+                    </div>
+                  </div>
+                  <span class="timeline-badge">Technical foundation</span>
+                </div>
+              </div>
+
+              <div class="timeline-item reveal" id="week-6">
+                <div class="timeline-content">
+                  <span class="timeline-week">Week 6</span>
+                  <h3 class="timeline-title">External Service Integration</h3>
+                  <p class="timeline-tasks">During this week, APIs were integrated into the Lekir Application to ensure proper data communication. Third-party services such as OneSignal for push notifications and Sentry for error monitoring were implemented, while UI components for the Cloverly Application were developed and multiple development tasks across different projects were managed simultaneously. Through these activities, valuable experience in handling API responses and integrating external services into mobile applications was gained. The ability to manage multiple tasks efficiently while maintaining UI consistency was also improved, along with adaptability to different project requirements and workflows. An increased understanding of real-world integrations and external tools was developed, along with improved adaptability when handling multiple projects simultaneously.</p>
+                  <div class="week-gallery">
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">ðŸ“¸<span>Dev</span></div>
+                    </div>
+                    <div class="gallery-item">
+                      <div class="gallery-placeholder">ðŸ“¸<span>UI</span></div>
+                    </div>
+                  </div>
+                  <span class="timeline-badge">Progress building</span>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        </div> -->
+
+    <div class="activity-main">
+      <div class="timeline stagger-reveal" id="timeline">
+        <div class="timeline-item reveal" id="week-1">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 1</span>
+            <h4>Activities</h4>
+            <ul>
+              <li>Learned Laravel basics including installation and MVC architecture.</li>
+              <li>Explored the use of Artisan commands.</li>
+              <li>Configured a simple database and executed migrations.</li>
+              <li>Explored existing company systems and presented understanding.</li>
+              <li>Practiced basic Git operations such as pushing and merging code.</li>
+            </ul>
+
+            <h4>Knowledge / Skills Gained</h4>
+            <ul>
+              <li>Gained foundational knowledge in Laravel development and MVC structure.</li>
+              <li>Improved understanding of database configuration and migration execution.</li>
+              <li>Learned the usage of Artisan commands in Laravel projects.</li>
+              <li>Improved understanding of Git version control workflows.</li>
+              <li>Developed better adaptability and confidence when working with new systems and technologies.</li>
+            </ul>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Ref</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Setup</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸</div>
+                <div class="gallery-more">+3</div>
+              </div>
+            </div>
+            <span class="timeline-badge">First steps</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-2">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 2</span>
+            <h3 class="timeline-title">SoGo App UI Development</h3>
+            <h4>Activities</h4>
+            <ul>
+              <li>Recreated the SoGo Application UI using Flutter.</li>
+              <li>Improved layout design, navigation flow, and user experience.</li>
+              <li>Enhanced rewards section visibility and usability.</li>
+              <li>Performed data cleaning tasks using Excel.</li>
+            </ul>
+
+            <h4>Knowledge / Skills Gained</h4>
+            <ul>
+              <li>Strengthened Flutter UI development skills.</li>
+              <li>Improved understanding of structured layouts and reusable components.</li>
+              <li>Learned basic UI/UX principles such as spacing and visual hierarchy.</li>
+              <li>Gained basic experience in data handling and organization.</li>
+              <li>Improved attention to detail in interface design.</li>
+            </ul>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>System</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Docs</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Learning continued</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-3">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 3</span>
+            <h3 class="timeline-title">API Integration & Features</h3>
+            <h4>Activities</h4>
+            <ul>
+              <li>Learned API integration in Flutter applications.</li>
+              <li>Implemented dark mode, onboarding screens, and animations.</li>
+              <li>Explored SharedPreferences for local data storage.</li>
+              <li>Applied clean coding practices and managed workflows using GitHub.</li>
+            </ul>
+
+            <h4>Knowledge / Skills Gained</h4>
+            <ul>
+              <li>Gained practical knowledge in API integration and local storage handling.</li>
+              <li>Improved understanding of clean code practices and project organization.</li>
+              <li>Learned how to manage project workflows using GitHub.</li>
+              <li>Improved ability to write more structured and maintainable code.</li>
+              <li>Developed better understanding of real-world application features.</li>
+            </ul>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>UI</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Design</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸</div>
+                <div class="gallery-more">+1</div>
+              </div>
+            </div>
+            <span class="timeline-badge">First contribution</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-4">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 4</span>
+            <h3 class="timeline-title">Refactoring & API Handling</h3>
+            <h4>Activities</h4>
+            <ul>
+              <li>Performed code cleanup and refactoring.</li>
+              <li>Improved application navigation flow.</li>
+              <li>Implemented mock APIs and integrated real APIs.</li>
+              <li>Strengthened error handling within the application.</li>
+            </ul>
+
+            <h4>Knowledge / Skills Gained</h4>
+            <ul>
+              <li>Improved debugging and troubleshooting skills.</li>
+              <li>Gained hands-on experience in API handling and application logic.</li>
+              <li>Improved understanding of modular coding practices.</li>
+              <li>Developed better problem-solving abilities.</li>
+              <li>Learned how to create more maintainable and scalable code structures.</li>
+            </ul>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Fixes</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Layout</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Attention to detail</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-5">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 5</span>
+            <h3 class="timeline-title">Error Handling & UI Polishing</h3>
+            <h4>Activities</h4>
+            <ul>
+              <li>Tested and improved application error handling mechanisms.</li>
+              <li>Performed code cleanup for better readability.</li>
+              <li>Refined and polished the SOGO application UI.</li>
+            </ul>
+
+            <h4>Knowledge / Skills Gained</h4>
+            <ul>
+              <li>Strengthened debugging and troubleshooting skills.</li>
+              <li>Improved understanding of clean coding and code organization.</li>
+              <li>Enhanced ability in refining UI components and layouts.</li>
+              <li>Improved attention to detail in both development and design.</li>
+              <li>Learned methods to improve application stability and reliability.</li>
+            </ul>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Test</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Logs</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Technical foundation</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-6">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 6</span>
+            <h3 class="timeline-title">External Service Integration</h3>
+            <h4>Activities</h4>
+            <ul>
+              <li>Integrated APIs into the Lekir Application.</li>
+              <li>Implemented external services such as OneSignal and Sentry.</li>
+              <li>Developed UI components for the Cloverly Application.</li>
+              <li>Managed multiple development tasks across different projects.</li>
+            </ul>
+
+            <h4>Knowledge / Skills Gained</h4>
+            <ul>
+              <li>Gained experience in handling API responses and integrations.</li>
+              <li>Learned the basics of using OneSignal for push notifications.</li>
+              <li>Learned the basics of using Sentry for error monitoring.</li>
+              <li>Improved multitasking and project management abilities.</li>
+              <li>Developed better adaptability when handling multiple projects and workflows.</li>
+            </ul>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Dev</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>UI</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Progress building</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-7">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 7</span>
+            <h3 class="timeline-title">Bug Fixing</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Bug</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Fix</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Problem solving</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-8">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 8</span>
+            <h3 class="timeline-title">Feature Testing</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Test</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸</div>
+                <div class="gallery-more">+2</div>
+              </div>
+            </div>
+            <span class="timeline-badge">Testing focus</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-9">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 9</span>
+            <h3 class="timeline-title">Continued Development</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Task</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Dev</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Consistency</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-10">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 10</span>
+            <h3 class="timeline-title">Task Documentation</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Doc</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Plan</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Process awareness</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-11">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 11</span>
+            <h3 class="timeline-title">API Integration</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>API</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Code</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">New responsibility</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-12">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 12</span>
+            <h3 class="timeline-title">Internal Project Work</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Internal</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Project</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Broader exposure</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-13">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 13</span>
+            <h3 class="timeline-title">Feature Assistance</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Feat</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸</div>
+                <div class="gallery-more">+4</div>
+              </div>
+            </div>
+            <span class="timeline-badge">Feature work</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-14">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 14</span>
+            <h3 class="timeline-title">Testing and Fixing</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Team</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Comms</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Communication growth</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-15">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 15</span>
+            <h3 class="timeline-title">Ongoing Implementation</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Impl</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Module</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Steady progress</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-16">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 16</span>
+            <h3 class="timeline-title">Feature Enhancement</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Enhance</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>UI</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Refinement</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-17">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 17</span>
+            <h3 class="timeline-title">Training Preparation</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Train</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Prep</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Knowledge sharing</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-18">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 18</span>
+            <h3 class="timeline-title">Training Support</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Session</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Slides</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Support role</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-19">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 19</span>
+            <h3 class="timeline-title">Final Testing</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Quality</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Final</span></div>
+              </div>
+            </div>
+            <span class="timeline-badge">Quality check</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="week-20">
+          <div class="timeline-content">
+            <span class="timeline-week">Week 20</span>
+            <h3 class="timeline-title">Completion and Reflection</h3>
+            <p class="timeline-tasks"></p>
+            <div class="week-gallery">
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Done</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸<span>Party</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">📸</div>
+                <div class="gallery-more">+5</div>
+              </div>
+            </div>
+            <span class="timeline-badge">Milestone reached</span>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <section class="section">
-      <div class="container">
-        <div class="stats-highlight reveal">
-          <div class="stat-bubble">
-            <div class="number">20</div>
-            <div class="label">Weeks of Training</div>
-          </div>
-          <div class="stat-bubble">
-            <div class="number">5+</div>
-            <div class="label">Core Task Areas</div>
-          </div>
-          <div class="stat-bubble">
-            <div class="number">100%</div>
-            <div class="label">Engagement</div>
-          </div>
-        </div>
-
-        <div class="week-nav-container reveal">
-          <div class="week-nav-label">Jump to Week</div>
-          <div class="week-nav-grid">
-            <a href="#week-1" class="week-nav-btn">1</a>
-            <a href="#week-2" class="week-nav-btn">2</a>
-            <a href="#week-3" class="week-nav-btn">3</a>
-            <a href="#week-4" class="week-nav-btn">4</a>
-            <a href="#week-5" class="week-nav-btn">5</a>
-            <a href="#week-6" class="week-nav-btn">6</a>
-            <a href="#week-7" class="week-nav-btn">7</a>
-            <a href="#week-8" class="week-nav-btn">8</a>
-            <a href="#week-9" class="week-nav-btn">9</a>
-            <a href="#week-10" class="week-nav-btn">10</a>
-            <a href="#week-11" class="week-nav-btn">11</a>
-            <a href="#week-12" class="week-nav-btn">12</a>
-            <a href="#week-13" class="week-nav-btn">13</a>
-            <a href="#week-14" class="week-nav-btn">14</a>
-            <a href="#week-15" class="week-nav-btn">15</a>
-            <a href="#week-16" class="week-nav-btn">16</a>
-            <a href="#week-17" class="week-nav-btn">17</a>
-            <a href="#week-18" class="week-nav-btn">18</a>
-            <a href="#week-19" class="week-nav-btn">19</a>
-            <a href="#week-20" class="week-nav-btn">20</a>
-          </div>
-        </div>
-
-        <div class="timeline stagger-reveal" id="timeline">
-          <div class="timeline-item reveal" id="week-1">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 1</span>
-              <h3 class="timeline-title">Learning and Setup</h3>
-              <p class="timeline-tasks">The development environment was successfully configured, and an introduction to basic Laravel concepts and Git workflows was provided.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Ref</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Setup</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸</div>
-                  <div class="gallery-more">+3</div>
-                </div>
-              </div>
-              <span class="timeline-badge">First steps</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-2">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 2</span>
-              <h3 class="timeline-title">System Exploration</h3>
-              <p class="timeline-tasks">Existing applications and project codebases were explored to gain a deeper understanding of the team's development standards.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>System</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Docs</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Learning continued</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-3">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 3</span>
-              <h3 class="timeline-title">Basic UI Tasks</h3>
-              <p class="timeline-tasks">Work was initiated on basic Flutter UI tasks, guided by the provided project requirements and design references.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>UI</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Design</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸</div>
-                  <div class="gallery-more">+1</div>
-                </div>
-              </div>
-              <span class="timeline-badge">First contribution</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-4">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 4</span>
-              <h3 class="timeline-title">UI Improvements</h3>
-              <p class="timeline-tasks">Refinements were made to various UI layouts, with adjustments implemented based on the feedback received from the supervisor.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Fixes</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Layout</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Attention to detail</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-5">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 5</span>
-              <h3 class="timeline-title">Testing Practice</h3>
-              <p class="timeline-tasks">Standard testing procedures were practiced on selected features to identify common issues and understand application behavior.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Test</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Logs</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Technical foundation</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-6">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 6</span>
-              <h3 class="timeline-title">UI Refinement</h3>
-              <p class="timeline-tasks">Progress was maintained in UI development across assigned screens, with updates pushed to the development branches.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Dev</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>UI</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Progress building</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-7">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 7</span>
-              <h3 class="timeline-title">Bug Fixing</h3>
-              <p class="timeline-tasks">Troubleshooting was conducted on several minor UI bugs, which were successfully identified and resolved through systematic testing.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Bug</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Fix</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Problem solving</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-8">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 8</span>
-              <h3 class="timeline-title">Feature Testing</h3>
-              <p class="timeline-tasks">Feature testing was prioritized, and the causes of various issues were traced step-by-step to maintain application stability.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Test</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸</div>
-                  <div class="gallery-more">+2</div>
-                </div>
-              </div>
-              <span class="timeline-badge">Testing focus</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-9">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 9</span>
-              <h3 class="timeline-title">Continued Development</h3>
-              <p class="timeline-tasks">Tasks involving UI development and bug fixing were continued, while familiarity with the daily development workflow was increased.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Task</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Dev</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Consistency</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-10">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 10</span>
-              <h3 class="timeline-title">Task Documentation</h3>
-              <p class="timeline-tasks">Testing progress and task updates were recorded more systematically to ensure daily responsibilities remained organized.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Doc</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Plan</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Process awareness</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-11">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 11</span>
-              <h3 class="timeline-title">API Integration</h3>
-              <p class="timeline-tasks">API integration tasks were performed under the guidance of the lead developer, connecting front-end features with back-end services.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>API</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Code</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">New responsibility</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-12">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 12</span>
-              <h3 class="timeline-title">Internal Project Work</h3>
-              <p class="timeline-tasks">Ongoing work was performed on internal Flutter projects, including UI updates, API verification, and general task support.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Internal</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Project</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Broader exposure</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-13">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 13</span>
-              <h3 class="timeline-title">Feature Assistance</h3>
-              <p class="timeline-tasks">Assistance was provided for key features such as reward systems, attendance tracking, and profile modules.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Feat</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸</div>
-                  <div class="gallery-more">+4</div>
-                </div>
-              </div>
-              <span class="timeline-badge">Feature work</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-14">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 14</span>
-              <h3 class="timeline-title">Testing and Fixing</h3>
-              <p class="timeline-tasks">Issues identified during testing were resolved, and professional communication was practiced regarding ambiguous task details.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Team</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Comms</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Communication growth</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-15">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 15</span>
-              <h3 class="timeline-title">Ongoing Implementation</h3>
-              <p class="timeline-tasks">Module implementation was continued, which further strengthened the understanding of practical development standards.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Impl</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Module</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Steady progress</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-16">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 16</span>
-              <h3 class="timeline-title">Feature Enhancement</h3>
-              <p class="timeline-tasks">UI enhancements and final refinements were added to various features based on the feedback received during review sessions.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Enhance</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>UI</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Refinement</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-17">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 17</span>
-              <h3 class="timeline-title">Training Preparation</h3>
-              <p class="timeline-tasks">Training materials and presentation slides were prepared to document the technical processes developed during the training period.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Train</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Prep</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Knowledge sharing</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-18">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 18</span>
-              <h3 class="timeline-title">Training Support</h3>
-              <p class="timeline-tasks">Support was provided during Flutter training sessions, including the preparation of modules, quizzes, and presentation materials.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Session</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Slides</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Support role</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-19">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 19</span>
-              <h3 class="timeline-title">Final Testing</h3>
-              <p class="timeline-tasks">Final quality checks were conducted, during which features were re-tested to ensure readiness for the handover process.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Quality</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Final</span></div>
-                </div>
-              </div>
-              <span class="timeline-badge">Quality check</span>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" id="week-20">
-            <div class="timeline-content">
-              <span class="timeline-week">Week 20</span>
-              <h3 class="timeline-title">Completion and Reflection</h3>
-              <p class="timeline-tasks">Final improvements were completed, and the 20-week training period was concluded with a focus on professional workplace readiness.</p>
-              <div class="week-gallery">
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Done</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸<span>Party</span></div>
-                </div>
-                <div class="gallery-item">
-                  <div class="gallery-placeholder">📸</div>
-                  <div class="gallery-more">+5</div>
-                </div>
-              </div>
-              <span class="timeline-badge">Milestone reached</span>
-            </div>
-          </div>
-        </div>
-
-        <nav class="section-nav" aria-label="Section navigation">
-          <a href="acknowledgements.html" class="nav-prev">
-            <span class="nav-label">&#8592; Previous</span>
-            Acknowledgements
-          </a>
-          <a href="technical-report.html" class="nav-next">
-            <span class="nav-label">Next &#8594;</span>
-            Technical Report
-          </a>
+  <nav class="section-nav" aria-label="Section navigation">
+    <a href="acknowledgements.html" class="nav-prev">
+      <span class="nav-label">&#8592; Previous</span>
+      Acknowledgements
+    </a>
+    <a href="technical-report.html" class="nav-next">
+      <span class="nav-label">Next &#8594;</span>
+      Technical Report
+    </a>
         </nav>
       </div>
     </section>
@@ -658,7 +942,3 @@
 </body>
 
 </html>
-
-
-
-

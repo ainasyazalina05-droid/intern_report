@@ -178,7 +178,7 @@ body {
   background: var(--bg);
   overflow-x: hidden;
   line-height: 1.58;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 h1,
@@ -262,9 +262,12 @@ h3 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr;
   gap: 2.2rem;
   align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero-actions {
@@ -709,7 +712,7 @@ p:last-child {
 ═══════════════════════════════════════════════════════════ */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-columns: 1fr;
   gap: 1.4rem;
   align-items: center;
 }
@@ -2243,5 +2246,143 @@ body {
   background: var(--accent);
 }
 
+/* ═══════════════════════════════════════════════════════════
+   Weekly Summaries (Training Activities)
+═══════════════════════════════════════════════════════════ */
+.weekly-summaries {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.week-summary-item {
+  padding: 1.5rem;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.week-summary-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.week-summary-item h3 {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.week-summary-item p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+}
 
 
+
+/* ═══════════════════════════════════════════════════════════
+   Workflow Section
+═══════════════════════════════════════════════════════════ */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem 2rem;
+  margin-top: 3rem;
+}
+
+.workflow-card {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible;
+}
+
+.workflow-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft), 0 0 0 4px rgba(59, 130, 246, 0.05);
+}
+
+.workflow-step-tag {
+  position: absolute;
+  top: -12px;
+  left: 2rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  z-index: 2;
+}
+
+.workflow-img-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--accent-soft) 100%);
+}
+
+.workflow-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.workflow-card:hover .workflow-img-container img {
+  transform: scale(1.05);
+}
+
+.workflow-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.workflow-img-placeholder i {
+  font-size: 2rem;
+}
+
+.workflow-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--primary);
+}
+
+.workflow-content p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
